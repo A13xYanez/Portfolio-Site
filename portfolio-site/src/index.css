@@ -5,9 +5,9 @@
 }
 
 body {
-    max-height: 100dvh;
     max-width: 100dvw;
     overflow: hidden;
+    background: #282828;
 }
 
 a {
