@@ -8,14 +8,13 @@ const Landing = () => {
         <main className='landing-container'>
             <div className="landing-content">
                 <div className="menu-controls">
-                    <IoMenu />
+                    <IoMenu className='menu-icon' />
                 </div>
                 <div className="logo">
-
+                    <img src="/logo.png" alt="" />
                 </div>
                 <div className="name">
-                    <h2>Alex</h2>
-                    <h2>Yanez</h2>
+                    <h2>Alex Yanez</h2>
                 </div>
                 <div className="roles">
                     <h2>Software Engineer</h2>
