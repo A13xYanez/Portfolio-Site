@@ -20,6 +20,8 @@ const Landing = () => {
                     <h2>Software Engineer</h2>
                     <h2>Full-Stack Developer</h2>
                 </div>
+                    <spline-viewer url="https://prod.spline.design/n9t6fe6Uvtkn1ZE7/scene.splinecode"></spline-viewer>
+                    <div className="block"></div>
             </div>
         </main>
     );
