@@ -1,4 +1,5 @@
 import React from 'react';
+import transition from '../global/transitions/Transition';
 import './Landing.css';
 
 const Landing = () => {
@@ -15,4 +16,4 @@ const Landing = () => {
     );
 };
 
-export default Landing;
+export default transition(Landing);
