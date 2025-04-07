@@ -35,25 +35,43 @@
 }
 
 .menu-controls {
-    bottom: 0;
     right: 0;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 30px;
     padding: 10px 0 0 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.link-icon {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.active-dot {
+    height: 10px;
+    width: 10px;
+    background: #DBDBDB;
+    position: absolute;
+    left: 10px;
+    bottom: 15px;
+    border-radius: 50%;
 }
 
 .menu-icon {
     width: 90%;
     height: 90%;
     cursor: pointer;
+    z-index: 2;
+    background-color: #282828;
 }
 
 .logo {
     top: 0;
     left: 0;
-    border-bottom-right-radius: 50%;
+    border-bottom-right-radius: 30px;
     padding:  0 10px 10px 0;
     cursor: pointer;
 }
@@ -139,7 +157,7 @@
     }
 
     .menu-controls, .logo {
-        height: 65px;
+        height: fit-content;
         width: 65px;
     }
 }
