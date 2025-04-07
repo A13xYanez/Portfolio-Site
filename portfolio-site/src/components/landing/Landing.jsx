@@ -10,11 +10,10 @@ import { VscBook } from "react-icons/vsc";
 import { VscComment } from "react-icons/vsc";
 import { VscHome } from "react-icons/vsc";
 
-// TODO: use framer to make opacity effect for planet
 //TODO: Make logo open socials when clicked
-//TODO: Make text effect when text is hovered
 const Landing = () => {
     const [openMenu, setOpenMenu] = useState(false);
+
     return (
         <main className='landing-container'>
             <div className="landing-content">
@@ -52,6 +51,22 @@ const Landing = () => {
                 <div className="gradient"></div>
                 <spline-viewer className="planet" url="https://prod.spline.design/n9t6fe6Uvtkn1ZE7/scene.splinecode"></spline-viewer>
                 <div className="block"></div>
+                <div className="dark-mode-settings">
+                    <div className="mode-settings">
+                        <p>Dark Mode</p>
+                        <div className="led-bulb-active">
+                            <div />
+                        </div>
+                    </div>
+                </div>
+                <div className="light-mode-settings">
+                    <div className="mode-settings">
+                        <p>Light Mode</p>
+                        <div className="led-bulb-inactive">
+                            <div />
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     );
