@@ -4,6 +4,7 @@
     height: 100dvh;
     background: #282828;
     padding: 10px;
+    overflow: hidden;
 }
 
 .app-contents {

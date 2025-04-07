@@ -1,5 +1,72 @@
 /* Projects CSS */
 .projects-container {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-wrapper {
+    width: 100%;
+    height: 100px;
+    padding: 0 10px 0 10px;
+}
+
+.projects-slider {
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: auto;
+    gap: 3rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior-inline: contain;
+}
+
+.projects-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.project-item {
+    border: 1px solid red;
+}
+
+.project-slider-controlls {
+    height: fit-content;
+    width: 115px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects-controll-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--white);
+    border-radius: 1rem;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.controll-btn-icon {
+    width: 100%;
+    height: 100%;;
+}
+
+
+
+/* Projects Responsive Breakpoint */
+@media (min-width: 900px) {
+    .projects-slider {
+        grid-auto-columns: 50%;
+    }
+
+    .projects-wrapper {
+        padding: 0 20px 0 20px;
+    }
 }

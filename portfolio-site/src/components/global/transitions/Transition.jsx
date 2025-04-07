@@ -56,7 +56,7 @@ const transition = (Component) => {
             <div className="transition-container">
                 {
                     [...Array(numOfCol)].map((_, i) => {
-                        return <motion.div {...animation(expand, i)} key={i} />
+                        return <motion.div {...animation(expand, numOfCol - i)} key={i} />
                     })
                 }
             </div>
