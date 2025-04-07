@@ -29,7 +29,7 @@ const Menu = () => {
                         <NavLink><VscBook className='link-icon' /></NavLink>
                     </div>
                     <div>
-                        <NavLink><VscBriefcase className='link-icon' /></NavLink>
+                        <NavLink to='/projects'><VscBriefcase className='link-icon' /></NavLink>
                     </div>
                     <div>
                         <NavLink><VscComment className='link-icon' /></NavLink>

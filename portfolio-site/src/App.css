@@ -1,4 +1,4 @@
-/* Landing Container */
+/* App Container */
 .contain-app {
     width: 100%;
     height: 100dvh;
@@ -22,6 +22,9 @@
     box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, .5);
 }
 
+
+
+/* App Responsive Breakpoints */
 @media screen and (min-width: 900px) {
     .contain-app {
         padding: 20px;

@@ -4,6 +4,7 @@ import './App.css';
 import Nav from './components/global/nav/Nav';
 import Menu from './components/global/menu/Menu';
 import Landing from './components/landing/Landing';
+import Projects from './components/projects/Projects';
 
 function App() {
   const location = useLocation();
@@ -15,6 +16,7 @@ function App() {
         <Menu />
           <Routes location={location} key={location.pathname}>
             <Route path='/' element={<Landing />} exact />
+            <Route path='/projects' element={<Projects />} exact />
           </Routes>
       </div>
     </div>

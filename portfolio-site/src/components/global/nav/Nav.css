@@ -38,12 +38,14 @@
     position: absolute;
     top: 20px;
     left: 100px;
+    z-index: 1000;
 }
 
 .light-mode-settings {
     position: absolute;
     top: 20px;
     left: 230px;
+    z-index: 1000;
 }
 
 .mode-settings {
