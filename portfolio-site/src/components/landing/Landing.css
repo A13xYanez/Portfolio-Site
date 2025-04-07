@@ -26,7 +26,6 @@
 
 /* Menu CSS */
 .menu-controls, .logo {
-    height: 55px;
     width: 55px;
     background: #282828;
     position: absolute;
@@ -35,6 +34,7 @@
 }
 
 .menu-controls {
+    height: fit-content;
     right: 0;
     border-top-left-radius: 30px;
     padding: 10px 0 0 10px;
@@ -48,17 +48,7 @@
     width: 35px;
     height: 35px;
     cursor: pointer;
-}
-
-.active-dot {
-    height: 10px;
-    width: 10px;
-    background: #DBDBDB;
-    position: absolute;
-    left: 10px;
-    bottom: 15px;
-    border-radius: 50%;
-}
+} 
 
 .menu-icon {
     width: 90%;
@@ -74,6 +64,7 @@
     border-bottom-right-radius: 30px;
     padding:  0 10px 10px 0;
     cursor: pointer;
+    height: 55px;
 }
 
 .logo img {
@@ -138,6 +129,19 @@
     z-index: 0;
 }
 
+.planet {
+    animation: fade-in 4s ease-in;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @media screen and (min-width: 900px) {
     .landing-container {
         padding: 20px;
@@ -156,8 +160,12 @@
         width: 100%;
     }
 
-    .menu-controls, .logo {
-        height: fit-content;
+    .logo {
+        height: 65px;
+        width: 65px;
+    }
+
+    .menu-controls {
         width: 65px;
     }
 }

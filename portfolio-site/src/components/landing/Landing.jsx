@@ -11,7 +11,6 @@ import { VscComment } from "react-icons/vsc";
 import { VscHome } from "react-icons/vsc";
 
 // TODO: use framer to make opacity effect for planet
-//TODO: Make menu open upwards when clicked
 //TODO: Make logo open socials when clicked
 //TODO: Make text effect when text is hovered
 const Landing = () => {
@@ -21,12 +20,11 @@ const Landing = () => {
             <div className="landing-content">
                 <motion.div
                     initial={false}
-                    animate={{bottom: openMenu ? 0 : -160, transition: {ease: easeInOut}}}
+                    animate={{bottom: openMenu ? 0 : -155, transition: {ease: easeInOut}}}
                     className="menu-controls"
                 >
                     <IoMenu className='menu-icon' onClick={() => setOpenMenu(!openMenu)} />
                     <div>
-                        <div className="active-dot"></div>
                         <div>
                             <NavLink to='/'><VscHome className='link-icon' /></NavLink>
                         </div>
@@ -42,7 +40,7 @@ const Landing = () => {
                     </div>
                 </motion.div>
                 <div className="logo">
-                    <img src="/H4.png" alt="" />
+                    <img src="/logo.png" alt="" />
                 </div>
                 <div className="name">
                     <h2>Alex Yanez</h2>
@@ -52,7 +50,7 @@ const Landing = () => {
                     <h2>Full-Stack Developer</h2>
                 </div>
                 <div className="gradient"></div>
-                <spline-viewer url="https://prod.spline.design/n9t6fe6Uvtkn1ZE7/scene.splinecode"></spline-viewer>
+                <spline-viewer className="planet" url="https://prod.spline.design/n9t6fe6Uvtkn1ZE7/scene.splinecode"></spline-viewer>
                 <div className="block"></div>
             </div>
         </main>
