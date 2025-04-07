@@ -1,0 +1,29 @@
+/* Landing Container */
+.contain-app {
+    width: 100%;
+    height: 100dvh;
+    background: #282828;
+    padding: 10px;
+}
+
+.app-contents {
+    width: 100%;
+    height: 100%;
+    background: #161616;
+    border-radius: 9px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #DBDBDB;
+    font-family: monospace;
+    text-transform: uppercase;
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, .5);
+}
+
+@media screen and (min-width: 900px) {
+    .contain-app {
+        padding: 20px;
+    }
+}
