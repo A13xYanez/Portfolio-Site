@@ -1,13 +1,10 @@
 /* Menu CSS */
-.menu-controls{
+.menu-controls {
     width: 55px;
     background: #282828;
     position: absolute;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
     z-index: 1000;
-}
-
-.menu-controls {
     height: fit-content;
     right: 0;
     border-top-left-radius: 30px;

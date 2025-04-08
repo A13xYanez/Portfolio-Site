@@ -40,27 +40,21 @@
     top: 20px;
     right: 20px;
     font-size: clamp(9px, .75rem + .5vw, 12px);
+    animation: nameSlideLeft 2s;
 }
 
 .name h2 {
     font-weight: 100;
 }
 
-.dark-mode-settings {
+.open-to-projects-wrapper {
     position: absolute;
     top: 20px;
     left: 100px;
     z-index: 1000;
 }
 
-.light-mode-settings {
-    position: absolute;
-    top: 20px;
-    left: 230px;
-    z-index: 1000;
-}
-
-.mode-settings {
+.open-to-projects-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,8 +64,8 @@
 .led-bulb-active {
     height: 10px;
     width: 10px;
-    background-color: #EEDC82;
-    box-shadow: 0 0 5px 0 #EEDC82;
+    background: #39FF14;
+    box-shadow: 0 0 5px 0 #39FF14;
     border-radius: 50%;
     margin-left: 10px;
     animation: pulse 3s infinite;
@@ -113,6 +107,15 @@
     100% {
         opacity: 1;
         padding: 0;
+    }
+}
+
+@keyframes nameSlideLeft {
+    from {
+        right: -500px;
+    }
+    to {
+        right: 20px;
     }
 }
 

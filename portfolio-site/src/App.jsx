@@ -6,6 +6,7 @@ import Nav from './components/global/nav/Nav';
 import Menu from './components/global/menu/Menu';
 import Landing from './components/landing/Landing';
 import Projects from './components/projects/Projects';
+import About from './components/about/About';
 
 function App() {
   const location = useLocation();
@@ -18,7 +19,8 @@ function App() {
         <AnimatePresence mode='wait'>
           <Routes location={location} key={location.pathname}>
             <Route path='/' element={<Landing />} exact />
-            <Route path='/projects' element={<Projects />} exact />
+            <Route path='/projects' element={<Projects />} />
+            <Route path='/about' element={<About />} />
           </Routes>
         </AnimatePresence>
       </div>

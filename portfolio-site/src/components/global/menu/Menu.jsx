@@ -17,7 +17,7 @@ const Menu = () => {
         <div>
             <motion.div
                 initial={false}
-                animate={{bottom: openMenu ? 0 : -155, transition: {ease: easeInOut}}}
+                animate={{bottom: openMenu ? 0 : -152, transition: {ease: easeInOut}}}
                 className="menu-controls"
             >
                 <IoMenu className='menu-icon' onClick={() => setOpenMenu(!openMenu)} />
@@ -26,7 +26,7 @@ const Menu = () => {
                         <NavLink to='/'><VscHome className='link-icon' /></NavLink>
                     </div>
                     <div>
-                        <NavLink><VscBook className='link-icon' /></NavLink>
+                        <NavLink to='/about'><VscBook className='link-icon' /></NavLink>
                     </div>
                     <div>
                         <NavLink to='/projects'><VscBriefcase className='link-icon' /></NavLink>
