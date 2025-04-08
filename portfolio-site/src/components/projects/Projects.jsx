@@ -5,7 +5,13 @@ import './Projects.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-
+import img from '../../assets/artisan-allure-fashions-project.png'
+import { VscTriangleRight } from "react-icons/vsc";
+import { VscTriangleLeft } from "react-icons/vsc";
+import { HiOutlineLink } from "react-icons/hi";
+import reactLogo from '../../assets/react-original.svg';
+import mongodbLogo from '../../assets/mongodb-original.svg';
+import expressLogo from '../../assets/express-original.svg';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -40,70 +46,110 @@ const Projects = () => {
             >
                 <SwiperSlide>
                     <div className="project-content">
-                        <h2>Artisan Allure Fashions</h2>
+                        <h2 className='project-name'>Artisan Allure Fashions</h2>
                         <div className="img-wrapper">
-
+                            <img src={img} alt="" />
                         </div>
                         <div className="project-details">
-                            <h2>Website</h2>
+                            <div className="project-links">
+                                <h2>Website</h2>
+                                <HiOutlineLink className='project-link-icon' />
+                            </div>
+                            <div className="project-skills">
+                                <div className='skill-background' style={{ "--i": "0px" }}><img src={reactLogo} alt="" /></div>
+                                <div className='skill-background' style={{ "--i": "-5px" }}><img src={mongodbLogo} alt="" /></div>
+                                <div className='skill-background' style={{ "--i": "-10px" }}><img src={expressLogo} alt="" /></div>
+                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="project-content">
-                        <h2>Artisan  Fashions</h2>
+                        <h2 className='project-name'>Artisan Allure Fashions</h2>
                         <div className="img-wrapper">
-
+                            <img src={img} alt="" />
                         </div>
                         <div className="project-details">
-                            <h2>Website</h2>
+                            <div className="project-links">
+                                <h2>Website</h2>
+                                <HiOutlineLink className='project-link-icon' />
+                            </div>
+                            <div className="project-skills">
+                                <div className='skill-background' style={{ "--i": "0px" }}><img src={reactLogo} alt="" /></div>
+                                <div className='skill-background' style={{ "--i": "-5px" }}><img src={mongodbLogo} alt="" /></div>
+                                <div className='skill-background' style={{ "--i": "-10px" }}><img src={expressLogo} alt="" /></div>
+                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="project-content">
-                        <h2>Artisan Allure </h2>
+                        <h2 className='project-name'>Artisan Allure Fashions</h2>
                         <div className="img-wrapper">
-
+                            <img src={img} alt="" />
                         </div>
                         <div className="project-details">
-                            <h2>Website</h2>
+                            <div className="project-links">
+                                <h2>Website</h2>
+                                <HiOutlineLink className='project-link-icon' />
+                            </div>
+                            <div className="project-skills">
+                                <div className='skill-background' style={{ "--i": "0px" }}><img src={reactLogo} alt="" /></div>
+                                <div className='skill-background' style={{ "--i": "-5px" }}><img src={mongodbLogo} alt="" /></div>
+                                <div className='skill-background' style={{ "--i": "-10px" }}><img src={expressLogo} alt="" /></div>
+                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="project-content">
-                        <h2> Allure Fashions</h2>
+                        <h2 className='project-name'>Artisan Allure Fashions</h2>
                         <div className="img-wrapper">
-
+                            <img src={img} alt="" />
                         </div>
                         <div className="project-details">
-                            <h2>Website</h2>
+                            <div className="project-links">
+                                <h2>Website</h2>
+                                <HiOutlineLink className='project-link-icon' />
+                            </div>
+                            <div className="project-skills">
+                                <div className='skill-background' style={{ "--i": "0px" }}><img src={reactLogo} alt="" /></div>
+                                <div className='skill-background' style={{ "--i": "-5px" }}><img src={mongodbLogo} alt="" /></div>
+                                <div className='skill-background' style={{ "--i": "-10px" }}><img src={expressLogo} alt="" /></div>
+                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="project-content">
-                        <h2>  Fashions</h2>
+                        <h2 className='project-name'>Artisan Allure Fashions</h2>
                         <div className="img-wrapper">
-
+                            <img src={img} alt="" />
                         </div>
                         <div className="project-details">
-                            <h2>Website</h2>
+                            <div className="project-links">
+                                <h2>Website</h2>
+                                <HiOutlineLink className='project-link-icon' />
+                            </div>
+                            <div className="project-skills">
+                                <div className='skill-background' style={{ "--i": "0px" }}><img src={reactLogo} alt="" /></div>
+                                <div className='skill-background' style={{ "--i": "-5px" }}><img src={mongodbLogo} alt="" /></div>
+                                <div className='skill-background' style={{ "--i": "-10px" }}><img src={expressLogo} alt="" /></div>
+                            </div>
                         </div>
                     </div>
                 </SwiperSlide>
-
                 <div className="slider-controler">
                     <div className="swiper-button-prev slider-arrow">
-
+                        <VscTriangleLeft />
                     </div>
                     <div className="swiper-button-next slider-arrow">
-
+                        <VscTriangleRight />
                     </div>
-                    <div className="swiper-pagination"></div>
                 </div>
             </Swiper>
+            <div className="fade-slider-left" />
+            <div className="fade-slider-right" />
         </div>
     );
 }
