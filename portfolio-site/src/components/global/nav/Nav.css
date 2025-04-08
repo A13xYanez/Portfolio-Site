@@ -1,21 +1,33 @@
 /* Nav CSS */
-.logo {
-    top: 0;
-    left: 0;
-    border-bottom-right-radius: 30px;
-    padding:  0 10px 10px 0;
-    cursor: pointer;
-    height: 55px;
+.contain-nav-controlls{
     width: 55px;
     background: #282828;
     position: absolute;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
     z-index: 1000;
+    height: fit-content;
+    left: 0;
+    border-bottom-right-radius: 30px;
+    padding:  0 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
 }
 
-.logo img {
-    height: 90%;
+.nav-link-icon {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin-bottom: 10px;
+} 
+
+.nav-logo {
     width: 90%;
+    height: 90%;
+    cursor: pointer;
+    z-index: 2;
+    background-color: #282828;
 }
 
 .name {
@@ -108,17 +120,13 @@
 
 /* Nav Responsive Breakpoints */
 @media screen and (min-width: 900px) {
-    .logo {
-        padding: 0 20px 20px 0;
+    .contain-nav-controlls {
+        padding:  0 20px 20px 0;
+        width: 65px;
     }
 
-    .logo img {
+    .nav-logo {
         height: 100%;
         width: 100%;
-    }
-
-    .logo {
-        height: 65px;
-        width: 65px;
     }
 }
