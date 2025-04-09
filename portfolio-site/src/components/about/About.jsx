@@ -1,9 +1,11 @@
 import React from 'react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import transition from '../global/transitions/Transition'
+import folderIcon from '../../assets/windows-95-folder.svg';
 import './About.css'
 
-import fold from '../../assets/Folder.svg';
+import msgInfo from '../../assets/msg_information.svg';
+import closeIcon from '../../assets/close-icon.svg';
 
 const About = () => {
     const container = useRef(null);
@@ -64,24 +66,66 @@ const About = () => {
 
         return cleanUp;
     }, []);
+
+    const [infoIsOpen, setInfoIsOpen] = useState(true);
+    const [aboutIsOpen, setAboutIsOpen] = useState(false);
     return (
         <div ref={container} className="about-container">
-            <div className="folder-container about-me-folder" ref={folder}>
-                <img src={fold} draggable="false" alt='Folder Icon' className="folder-img" />
+            <div className="folder-container about-me-folder" ref={folder} onClick={() => setAboutIsOpen(true)}>
+                <img src={folderIcon} draggable="false" alt='Folder Icon' className="folder-img" />
                 <p>About Me</p>
             </div>
             <div className="folder-container work-experience-folder">
-                <img src={fold} draggable="false" alt='Folder Icon' className="folder-img" />
+                <img src={folderIcon} draggable="false" alt='Folder Icon' className="folder-img" />
                 <p>Experience</p>
             </div>
             <div className="folder-container education-folder">
-                <img src={fold} draggable="false" alt='Folder Icon' className="folder-img" />
+                <img src={folderIcon} draggable="false" alt='Folder Icon' className="folder-img" />
                 <p>Education</p>
             </div>
             <div className="folder-container skills-folder">
-                <img src={fold} draggable="false" alt='Folder Icon' className="folder-img" />
+                <img src={folderIcon} draggable="false" alt='Folder Icon' className="folder-img" />
                 <p>Skills</p>
             </div>
+
+            {infoIsOpen && 
+                <div className="info-popup-window-container">
+                    <div className="window-title-bar">
+                        <div className="title-bar-left">
+                            <h2>Help</h2>
+                        </div>
+                        <div className="title-bar-right">
+                            <img src={closeIcon} alt="Close Button Icon" draggable="false" onClick={() => setInfoIsOpen(false)} />
+                        </div>
+                    </div>
+                    <div className="window-content">
+                        <div className="window-header">
+                            <img src={msgInfo} draggable="false" alt="Information Icon" />
+                            <h2>Read me:</h2>
+                        </div>
+                        <p>To access the information about me, click or tap on the folders.</p>
+                        <br/>
+                        <p>Please note, you can move all the items on this page by dragging them with your mouse.</p>
+                        <p>This feature is disabled on mobile devices for a better user experience.</p>
+                    </div>
+                </div>
+            }
+
+            {aboutIsOpen &&
+                <div className="about-popup-window-container">
+                    <div className="window-title-bar">
+                        <div className="title-bar-left">
+                            <h2>About Me</h2>
+                        </div>
+                        <div className="title-bar-right">
+                            <img src={closeIcon} alt="Close Button Icon" draggable="false" onClick={() => setAboutIsOpen(false)} />
+                        </div>
+                    </div>
+                    <div className="about-window-content">
+                        <p>About me stuff</p>
+                    </div>
+                </div>
+            }
         </div>
     )
 };

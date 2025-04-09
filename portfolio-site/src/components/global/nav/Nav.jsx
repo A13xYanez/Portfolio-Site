@@ -30,7 +30,7 @@ const Nav = () => {
             </div>
             <div className="open-to-projects-wrapper">
                 <div className="open-to-projects-content">
-                    <p>Always open to new projects</p>
+                    <p>Providing project support</p>
                     <div className="led-bulb-active">
                         <div />
                     </div>
