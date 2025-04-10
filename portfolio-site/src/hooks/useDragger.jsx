@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 
-const useDragger = (elementID, elementXPosition, elementYPosition, elementToggles) => {
+const useDragger = (elementID, elementXPosition, elementYPosition, elementToggles, toggleEvent) => {
     const isClicked = useRef(false);
     const coords = useRef({
         startX: elementXPosition,
@@ -52,10 +52,16 @@ const useDragger = (elementID, elementXPosition, elementYPosition, elementToggle
             if (targetToggles) targetToggles.style.display = "block";
         }
 
+        const onClick = () => {
+            if (targetToggles) target.style.display = "none";
+            console.log("clis");
+        }
+
         // attatch event listeners
         target.addEventListener('mousedown', onMouseDown);
         target.addEventListener('mouseup', onMouseUp);
-        target.addEventListener('dblclick', onDoubleClick);
+        if (toggleEvent == "open-window") target.addEventListener('dblclick', onDoubleClick);
+        if (toggleEvent == "close-window") targetToggles.addEventListener('click', onClick);
         container.addEventListener('mousemove', onMouseMove);
         container.addEventListener('mouseleave', onMouseUp);
 
@@ -63,7 +69,8 @@ const useDragger = (elementID, elementXPosition, elementYPosition, elementToggle
         const cleanUp = () => {
             target.removeEventListener('mousedown', onMouseDown);
             target.removeEventListener('mouseup', onMouseUp);
-            target.removeEventListener('dblclick', onDoubleClick);
+            if (toggleEvent == "open-window") target.removeEventListener('dblclick', onDoubleClick);
+            if (toggleEvent == "close-window") targetToggles.removeEventListener('click', onClick);
             container.removeEventListener('mousemove', onMouseMove);
             container.removeEventListener('mouseleave', onMouseUp);
         };

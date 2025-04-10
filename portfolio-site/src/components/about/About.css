@@ -62,6 +62,7 @@
     border-left: 2px solid #ffffff;
     border-top: 2px solid #ffffff;
     box-shadow: 1px 1px 0 1px #0a0a0a, -1px -1px 0 1px #c0c0c0;
+    z-index: 1000;
 }
 
 .window-title-bar {
@@ -124,6 +125,7 @@
     box-shadow: 1px 1px 0 1px #0a0a0a, -1px -1px 0 1px #c0c0c0;
     padding-bottom: 50px;
     display: none;
+    z-index: 1000;
 }
 
 .about-window-content {
@@ -158,6 +160,7 @@
     box-shadow: 1px 1px 0 1px #0a0a0a, -1px -1px 0 1px #c0c0c0;
     color: #ffffff;
     display: none;
+    z-index: 1000;
 }
 
 .expand-down-icon {
@@ -298,6 +301,7 @@
     color: #ffffff;
     padding-bottom: 70px;
     display: none;
+    z-index: 1000;
 }
 
 .education-section-tabs {
@@ -442,6 +446,7 @@
     color: #ffffff;
     padding-bottom: 50px;
     display: none;
+    z-index: 1000;
 }
 
 .skills-window-content {

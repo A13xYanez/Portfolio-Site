@@ -3,7 +3,8 @@ import Image from '../global/images/Image';
 import useDragger from '../../hooks/useDragger';
 
 const SkillsSection = () => {
-    useDragger("skills-folder", 976, 258, "skills-window");
+    useDragger("skills-folder", 976, 258, "skills-window", "open-window");
+    useDragger("skills-window", 540, 130, "close-skills-window", "close-window");
     return (
         <>
             <div className="folder-container skills-folder" id='skills-folder'>
@@ -16,7 +17,7 @@ const SkillsSection = () => {
                         <h2>Skills</h2>
                     </div>
                     <div className="title-bar-right">
-                        <Image path="windows-95-close-icon.svg" alt="Close Button Icon" draggable="false" onClick={() => setSkillsIsOpen(false)} />
+                        <Image path="windows-95-close-icon.svg" id="close-skills-window" alt="Close Button Icon" draggable="false" />
                     </div>
                 </div>
                 <div className="skills-window-content">

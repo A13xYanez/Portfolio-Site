@@ -16,20 +16,21 @@ const WorkSection = () => {
         return setSelected(i);
     };
 
-    useDragger("work-folder", 700, 420);
+    useDragger("work-folder", 700, 420, "work-window", "open-window");
+    useDragger("work-window", 600, 200, "close-work-window", "close-window");
     return (
         <>
             <div className="folder-container work-experience-folder" id='work-folder'>
                 <Image path="windows-95-folder-icon.svg" draggable="false" alt='Folder Icon' className="folder-img" />
                 <p>Experience</p>
             </div>
-            <div className="work-experience-popup-window-container">
+            <div className="work-experience-popup-window-container" id='work-window'>
                 <div className="window-title-bar">
                     <div className="title-bar-left">
                         <h2>Work Experience</h2>
                     </div>
                     <div className="title-bar-right">
-                        <Image path="windows-95-close-icon.svg" alt="Close Button Icon" draggable="false" onClick={() => setExperienceIsOpen(false)} />
+                        <Image path="windows-95-close-icon.svg" id="close-work-window" alt="Close Button Icon" draggable="false" />
                     </div>
                 </div>
                 {workData.map((item, i) => (

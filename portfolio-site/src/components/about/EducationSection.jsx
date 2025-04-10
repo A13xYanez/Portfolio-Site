@@ -7,7 +7,8 @@ const EducationSection = () => {
     const [isDegreeTabOpen, setIsDegreeTabOpen] = useState(true);
     const [isCoursesTabOpen, setIsCoursesTabOpen] = useState(false);
     const [isClubsTabOpen, setIsClubsTabOpen] = useState(false);
-    useDragger("education-folder", 541, 143, "education-window");
+    useDragger("education-folder", 541, 143, "education-window", "open-window");
+    useDragger("education-window", 250, 250, "close-education-window", "close-window");
     return (
         <>
             <div className="folder-container education-folder" id='education-folder'>
@@ -20,7 +21,7 @@ const EducationSection = () => {
                         <h2>Education</h2>
                     </div>
                     <div className="title-bar-right">
-                        <Image path="windows-95-close-icon.svg" alt="Close Button Icon" draggable="false" onClick={() => setEducationIsOpen(false)} />
+                        <Image path="windows-95-close-icon.svg" id="close-education-window" alt="Close Button Icon" draggable="false" />
                     </div>
                 </div>
                 <div className="education-content-wrapper">

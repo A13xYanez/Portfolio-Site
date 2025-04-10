@@ -3,7 +3,8 @@ import Image from '../global/images/Image';
 import useDragger from '../../hooks/useDragger';
 
 const BioSection = () => {
-    useDragger("about-folder", 340, 330, "about-window");
+    useDragger("about-folder", 340, 330, "about-window", "open-window");
+    useDragger("about-window", 400, 100, "close-about-window", "close-window");
     return (
         <>
             <div className="folder-container about-me-folder" id='about-folder'>
@@ -16,7 +17,7 @@ const BioSection = () => {
                         <h2>About Me</h2>
                     </div>
                     <div className="title-bar-right">
-                        <Image path="windows-95-close-icon.svg" alt="Close Button Icon" draggable="false" onClick={() => setAboutIsOpen(false)} />
+                        <Image path="windows-95-close-icon.svg" id="close-about-window" alt="Close Button Icon" draggable="false" />
                     </div>
                 </div>
                 <div className="about-window-content">
