@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 
-const useDragger = (elementID) => {
+const useDragger = (elementID, elementXPosition, elementYPosition, elementToggles) => {
     const isClicked = useRef(false);
     const coords = useRef({
-        startX: 330,
-        startY: 340,
-        lastX: 330,
-        lastY: 340
+        startX: elementXPosition,
+        startY: elementYPosition,
+        lastX: elementXPosition,
+        lastY: elementYPosition
     });
 
     useEffect(() => {
@@ -17,7 +17,10 @@ const useDragger = (elementID) => {
         
         // reference the elements parent
         const container = target.parentElement;
-        if (!container) throw new Error("The target element must have a parent.")
+        if (!container) throw new Error("The target element must have a parent.");
+
+        // reference another element for events on the main element
+        const targetToggles = document.getElementById(elementToggles);
 
         // event listener functions
         const onMouseDown = (e) => {
@@ -45,9 +48,14 @@ const useDragger = (elementID) => {
             target.style.left = `${nextX }px`;
         }
 
+        const onDoubleClick = () => {
+            if (targetToggles) targetToggles.style.display = "block";
+        }
+
         // attatch event listeners
         target.addEventListener('mousedown', onMouseDown);
         target.addEventListener('mouseup', onMouseUp);
+        target.addEventListener('dblclick', onDoubleClick);
         container.addEventListener('mousemove', onMouseMove);
         container.addEventListener('mouseleave', onMouseUp);
 

@@ -24,7 +24,6 @@ import reacticon from '../../assets/react.svg';
 
 const About = () => {
     const [infoIsOpen, setInfoIsOpen] = useState(true);
-    const [aboutIsOpen, setAboutIsOpen] = useState(false);
     const [experienceIsOpen, setExperienceIsOpen] = useState(false);
     const [educationIsOpen, setEducationIsOpen] = useState(false);
     const [skillsIsOpen, setSkillsIsOpen] = useState(false);
@@ -42,8 +41,8 @@ const About = () => {
         return setSelected(i);
     };
 
-    useDragger("about-folder");
-    useDragger("work-folder");
+    useDragger("about-folder", 330, 340, "about-window");
+    useDragger("work-folder", 700, 420);
 
     return (
         <div className="about-container">
@@ -87,8 +86,8 @@ const About = () => {
                 </div>
             }
 
-            {aboutIsOpen &&
-                <div className="about-popup-window-container">
+
+                <div className="about-popup-window-container" id='about-window'>
                     <div className="window-title-bar">
                         <div className="title-bar-left">
                             <h2>About Me</h2>
@@ -101,7 +100,7 @@ const About = () => {
                         <p>About me stuff</p>
                     </div>
                 </div>
-            }
+            
 
             {experienceIsOpen &&
                 <div className="work-experience-popup-window-container">
