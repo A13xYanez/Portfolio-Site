@@ -3,24 +3,20 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import useDragger from '../../hooks/useDragger';
 import transition from '../global/transitions/Transition'
-import folderIcon from '../../assets/windows-95-folder.svg';
+import Image from '../global/images/Image';
 import './About.css'
 
-import msgInfo from '../../assets/msg_information.svg';
-import closeIcon from '../../assets/close-icon.svg';
-import bayvalleytech from '../../assets/bay_valley_tech_logo.jpg';
-import vista from '../../assets/valley_institute_for_sustainability_technology_agriculture_logo.jpg';
-import unifoodi from '../../assets/unifoodi_logo.png';
 import { VscTriangleDown } from "react-icons/vsc";
-import ucmlogo from '../../assets/UCMLogo.png';
-import googledevelopergroup from '../../assets/google_developer_group_logo.png';
-import acm from '../../assets/acm_logo.png';
-import hackmerced from '../../assets/hack_merced.png';
-import reacticon from '../../assets/react.svg';
+
 
 //TODO:
 //Change the p tags to textarea so that the windows become resizeable.
 //Set a minimun and max width and height so that they cannot be too small or big.
+
+//TODO: TODO:
+//Make a new file and package each part of the page into it.
+//So move the about folder and about window into the same component file,
+//move the work folder and work window into its own component file and so on.
 
 const About = () => {
     const [infoIsOpen, setInfoIsOpen] = useState(true);
@@ -47,19 +43,19 @@ const About = () => {
     return (
         <div className="about-container">
             <div className="folder-container about-me-folder" id='about-folder'>
-                <img src={folderIcon} draggable="false" alt='Folder Icon' className="folder-img" />
+                <Image path="windows-95-folder-icon.svg" draggable="false" alt='Folder Icon' className="folder-img" />
                 <p>About Me</p>
             </div>
             <div className="folder-container work-experience-folder" id='work-folder'>
-                <img src={folderIcon} draggable="false" alt='Folder Icon' className="folder-img" />
+                <Image path="windows-95-folder-icon.svg" draggable="false" alt='Folder Icon' className="folder-img" />
                 <p>Experience</p>
             </div>
             <div className="folder-container education-folder" onClick={() => setEducationIsOpen(true)}>
-                <img src={folderIcon} draggable="false" alt='Folder Icon' className="folder-img" />
+                <Image path="windows-95-folder-icon.svg" draggable="false" alt='Folder Icon' className="folder-img" />
                 <p>Education</p>
             </div>
             <div className="folder-container skills-folder" onClick={() => setSkillsIsOpen(true)}>
-                <img src={folderIcon} draggable="false" alt='Folder Icon' className="folder-img" />
+                <Image path="windows-95-folder-icon.svg" draggable="false" alt='Folder Icon' className="folder-img" />
                 <p>Skills</p>
             </div>
 
@@ -70,12 +66,12 @@ const About = () => {
                             <h2>Help</h2>
                         </div>
                         <div className="title-bar-right">
-                            <img src={closeIcon} alt="Close Button Icon" draggable="false" onClick={() => setInfoIsOpen(false)} />
+                            <Image path="windows-95-close-icon.svg" alt="Close Button Icon" draggable="false" onClick={() => setInfoIsOpen(false)} />
                         </div>
                     </div>
                     <div className="window-content">
                         <div className="window-header">
-                            <img src={msgInfo} draggable="false" alt="Information Icon" />
+                            <Image path="windows-95-information-icon.svg" draggable="false" alt="Information Icon" />
                             <h2>Read me:</h2>
                         </div>
                         <p>To access the information about me, <strong>double click</strong> on the folders.</p>
@@ -93,7 +89,7 @@ const About = () => {
                             <h2>About Me</h2>
                         </div>
                         <div className="title-bar-right">
-                            <img src={closeIcon} alt="Close Button Icon" draggable="false" onClick={() => setAboutIsOpen(false)} />
+                            <Image path="windows-95-close-icon.svg" alt="Close Button Icon" draggable="false" onClick={() => setAboutIsOpen(false)} />
                         </div>
                     </div>
                     <div className="about-window-content">
@@ -109,14 +105,14 @@ const About = () => {
                                 <h2>Work Experience</h2>
                             </div>
                             <div className="title-bar-right">
-                                <img src={closeIcon} alt="Close Button Icon" draggable="false" onClick={() => setExperienceIsOpen(false)} />
+                                <Image path="windows-95-close-icon.svg" alt="Close Button Icon" draggable="false" onClick={() => setExperienceIsOpen(false)} />
                             </div>
                         </div>
                         {workData.map((item, i) => (
                             <div className="work-experience-window-content" key={i}>
                                 <div className="work-experience-item" onClick={() => toggle(i)}>
                                     <div className="work-experience-info">
-                                        <img src={item.logo} />
+                                        <Image path={item.logo} alt={item.altText} draggable="false" />
                                         <div className="group-timeline-position">
                                             <div className="work-experience-position">
                                                 <p>{item.company}</p>
@@ -149,7 +145,7 @@ const About = () => {
                             <h2>Education</h2>
                         </div>
                         <div className="title-bar-right">
-                            <img src={closeIcon} alt="Close Button Icon" draggable="false" onClick={() => setEducationIsOpen(false)} />
+                            <Image path="windows-95-close-icon.svg" alt="Close Button Icon" draggable="false" onClick={() => setEducationIsOpen(false)} />
                         </div>
                     </div>
                     <div className="education-content-wrapper">
@@ -168,7 +164,7 @@ const About = () => {
                             {isDegreeTabOpen &&
                                 <div className="education-degree-tab">
                                     <div className="university-logo">
-                                        <img src={ucmlogo} draggable="false" alt="The University of California, Merced Logo" />
+                                        <Image path="ucm-logo.png" draggable="false" alt="The University of California, Merced Logo" />
                                     </div>
                                     <div className="univeristy-details">
                                         <p className='university-details-section-title'>University name:</p>
@@ -204,7 +200,7 @@ const About = () => {
                                         {clubData.map((item, i) => (
                                             <div className="club-item" key={i}>
                                                 <div className="club-logo">
-                                                    <img src={item.logo} draggable="false" alt="Google Developer Group's Logo" />
+                                                    <Image path={item.logo} draggable="false" alt={item.altText} />
                                                 </div>
                                                 <div className="univeristy-details">
                                                     <p className='university-details-section-title'>Club Name:</p>
@@ -231,59 +227,59 @@ const About = () => {
                             <h2>Skills</h2>
                         </div>
                         <div className="title-bar-right">
-                            <img src={closeIcon} alt="Close Button Icon" draggable="false" onClick={() => setSkillsIsOpen(false)} />
+                            <Image path="windows-95-close-icon.svg" alt="Close Button Icon" draggable="false" onClick={() => setSkillsIsOpen(false)} />
                         </div>
                     </div>
                     <div className="skills-window-content">
                         <div className="skills-column">
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>JavaScript</p>
                             </div>
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>TypeScript</p>
                             </div>
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>React.js</p>
                             </div>
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>Next.js</p>
                             </div>
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>Express.js</p>
                             </div>
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>Tailwind</p>
                             </div>
                         </div>
                         <div className="skills-column">
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>C++</p>
                             </div>
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>Java</p>
                             </div>
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>Spring Boot</p>
                             </div>
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>AWS</p>
                             </div>
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>Flutter</p>
                             </div>
                             <div>
-                                <img src={reacticon} alt="" />
+                                <Image path="react-icon.svg" />
                                 <p>Dart</p>
                             </div>
                         </div>
@@ -296,46 +292,52 @@ const About = () => {
 
 const workData = [
     {
-        logo: unifoodi,
-        company: "UNiFoodi",
+        logo: "unifoodi-logo.png",
+        company: "UNiFOODi",
         title: "Full-Stack Developer",
         timeline: "Feb 2025 - Present",
         status: "in-progress",
-        description: "enter descripton here"
+        description: "enter descripton here",
+        altText: "UNiFOODi Logo"
     },
     {
-        logo: vista,
+        logo: "vista-logo.jpg",
         company: "VISTA",
         title: "Web Developer",
         timeline: "Jan 2025 - Present",
         status: "in-progress",
-        description: "enter descripton here"
+        description: "enter descripton here",
+        altText: "Valley Institute for Sustainability, Technology, and Agriculture Logo"
     },
     {
-        logo: bayvalleytech,
+        logo: "bay-valley-tech-logo.jpg",
         company: "Bay Valley Tech",
         title: "Full-Stack Developer",
         timeline: "Mar 2024 - Aug 2024",
         status: "completed",
-        description: "enter descripton here"
+        description: "enter descripton here",
+        altText: "Bay Valley Tech Logo"
     }
 ];
 
 const clubData = [
     {
-        logo: googledevelopergroup,
+        logo: "google-developer-group-logo.png",
         club: "Google Developer Group",
-        description: "description here"
+        description: "description here",
+        altText: "Google Developer Group Logo"
     },
     {
-        logo: acm,
+        logo: "acm-logo.png",
         club: "Association for Computing Machinery",
-        description: "description here"
+        description: "description here",
+        altText: "Association for Computing Machinery Logo"
     },
     {
-        logo: hackmerced,
+        logo: "hack-merced-logo.png",
         club: "Hack Merced",
-        description: "description here"
+        description: "description here",
+        altText: "Hack Merced Logo"
     }
 ];
 

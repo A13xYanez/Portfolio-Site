@@ -19,7 +19,7 @@ const useDragger = (elementID, elementXPosition, elementYPosition, elementToggle
         const container = target.parentElement;
         if (!container) throw new Error("The target element must have a parent.");
 
-        // reference another element for events on the main element
+        // reference another element and do something on an event on the main element
         const targetToggles = document.getElementById(elementToggles);
 
         // event listener functions
@@ -63,6 +63,7 @@ const useDragger = (elementID, elementXPosition, elementYPosition, elementToggle
         const cleanUp = () => {
             target.removeEventListener('mousedown', onMouseDown);
             target.removeEventListener('mouseup', onMouseUp);
+            target.removeEventListener('dblclick', onDoubleClick);
             container.removeEventListener('mousemove', onMouseMove);
             container.removeEventListener('mouseleave', onMouseUp);
         };
