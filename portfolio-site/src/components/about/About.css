@@ -179,6 +179,11 @@
     border-top: 2px solid #dfdfdf;
     box-shadow: 1px 1px 0 1px #0a0a0a, -1px -1px 0 1px #ffffff;
     cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.work-experience-item:hover {
+    padding-left: 15px;
 }
 
 .work-experience-item img {
@@ -269,4 +274,97 @@
     height: fit-content;
     max-height: 150px;
     transition: all 0.25s cubic-bezier(1, 0, 1, 0);
+}
+
+
+
+
+
+.education-popup-window-container {
+    width: 475px;
+    height: 500px;
+    position: absolute;
+    overflow: hidden;
+    left: 250px;
+    top: 250px;
+    background: #c0c0c0;
+    border-bottom: 2px solid #808080;
+    border-right: 2px solid #808080;
+    border-left: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    box-shadow: 1px 1px 0 1px #0a0a0a, -1px -1px 0 1px #c0c0c0;
+    color: #ffffff;
+    padding-bottom: 70px;
+}
+
+.education-section-tabs {
+    display: flex;
+}
+
+.education-tab {
+    background: #c0c0c0;
+    border-bottom: 2px solid #808080;
+    border-right: 2px solid #808080;
+    border-left: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    width: fit-content;
+    padding: 5px;
+    color: #0a0a0a;
+    cursor: pointer;
+    transition: .15s ease-in;
+}
+
+.education-tab:first-child {
+    border-top-left-radius: 6px;
+}
+
+.education-tab:last-child {
+    border-top-right-radius: 6px;
+}
+
+.education-tab:hover {
+    background: #808080;
+}
+
+.education-content-wrapper {
+    height: 100%;
+    padding: 10px;
+}
+
+.education-window-content {
+    background: #c0c0c0;
+    overflow-y: auto;
+    height: 100%;
+    padding: 5px;
+    border-bottom: 2px solid #808080;
+    border-right: 2px solid #808080;
+    border-left: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    box-shadow: 1px 1px 0 1px #0a0a0a, -1px -1px 0 1px #c0c0c0;
+    color: #0a0a0a;
+}
+
+.education-degree-tab {
+    display: flex;
+}
+
+.univeristy-details {
+    margin-left: 10px;
+}
+
+.university-details-section-title {
+    margin-bottom: 5px;
+}
+
+.university-logo {
+    background: #ffffff;
+    max-width: 200px;
+    max-height: 200px;
+    padding: 5px;
+}
+
+.university-logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
