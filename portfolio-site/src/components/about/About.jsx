@@ -12,6 +12,9 @@ import vista from '../../assets/valley_institute_for_sustainability_technology_a
 import unifoodi from '../../assets/unifoodi_logo.png';
 import { VscTriangleDown } from "react-icons/vsc";
 import ucmlogo from '../../assets/UCMLogo.png';
+import googledevelopergroup from '../../assets/google_developer_group_logo.png';
+import acm from '../../assets/acm_logo.png';
+import hackmerced from '../../assets/hack_merced.png';
 
 //TODO:
 //Change the p tags to textarea so that the windows become resizeable.
@@ -256,7 +259,23 @@ const About = () => {
 
                             {isClubsTabOpen &&
                                 <div className="education-clubs-tab">
-
+                                    <div className="education-clubs-tab">
+                                        {clubData.map((item, i) => (
+                                            <div className="club-item" key={i}>
+                                                <div className="club-logo">
+                                                    <img src={item.logo} draggable="false" alt="Google Developer Group's Logo" />
+                                                </div>
+                                                <div className="univeristy-details">
+                                                    <p className='university-details-section-title'>Club:</p>
+                                                    <p>{item.club}</p>
+                                                    <br/>
+                                                    <br/>
+                                                    <p className='university-details-section-title'>Description:</p>
+                                                    <p>{item.description}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             }
                         </div>
@@ -292,6 +311,24 @@ const workData = [
         status: "completed",
         description: "enter descripton here"
     }
-]
+];
+
+const clubData = [
+    {
+        logo: googledevelopergroup,
+        club: "Google Developer Group",
+        description: "description here"
+    },
+    {
+        logo: acm,
+        club: "Association for Computing Machinery",
+        description: "description here"
+    },
+    {
+        logo: hackmerced,
+        club: "Hack Merced",
+        description: "description here"
+    }
+];
 
 export default transition(About);
