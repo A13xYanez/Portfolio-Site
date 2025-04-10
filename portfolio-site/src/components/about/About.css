@@ -21,8 +21,8 @@
 }
 
 .about-me-folder {
-    top: 330px;
     left: 340px;
+    top: 330px;
 }
 
 .work-experience-folder {
@@ -31,8 +31,8 @@
 }
 
 .education-folder {
-    top: 143px;
     left: 541px;
+    top: 143px;
 }
 
 .skills-folder {
@@ -48,7 +48,7 @@
 
 
 
-/* Popup Window Styles */
+/* Info Popup Window */
 .info-popup-window-container {
     width: 475px;
     height: 270px;
@@ -108,7 +108,7 @@
 
 
 
-
+/* About Section */
 .about-popup-window-container {
     width: 475px;
     height: 500px;
@@ -142,6 +142,7 @@
 
 
 
+/* Work Experience Section */
 .work-experience-popup-window-container {
     width: 475px;
     height: 500px;
@@ -156,6 +157,7 @@
     border-top: 2px solid #ffffff;
     box-shadow: 1px 1px 0 1px #0a0a0a, -1px -1px 0 1px #c0c0c0;
     color: #ffffff;
+    display: none;
 }
 
 .expand-down-icon {
@@ -212,7 +214,7 @@
     color: #0a0a0a;
 }
 
-.groupd-timeline-position {
+.group-timeline-position {
     display: flex;
     flex-direction: column;
 }
@@ -279,8 +281,7 @@
 
 
 
-
-
+/* Education Section */
 .education-popup-window-container {
     width: 475px;
     height: 500px;
@@ -296,6 +297,7 @@
     box-shadow: 1px 1px 0 1px #0a0a0a, -1px -1px 0 1px #c0c0c0;
     color: #ffffff;
     padding-bottom: 70px;
+    display: none;
 }
 
 .education-section-tabs {
@@ -423,6 +425,7 @@
 
 
 
+/* Skills Section */
 .skills-popup-window-container {
     width: 475px;
     height: 500px;
@@ -438,6 +441,7 @@
     box-shadow: 1px 1px 0 1px #0a0a0a, -1px -1px 0 1px #c0c0c0;
     color: #ffffff;
     padding-bottom: 50px;
+    display: none;
 }
 
 .skills-window-content {
