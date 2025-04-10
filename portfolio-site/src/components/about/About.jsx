@@ -15,6 +15,7 @@ import ucmlogo from '../../assets/UCMLogo.png';
 import googledevelopergroup from '../../assets/google_developer_group_logo.png';
 import acm from '../../assets/acm_logo.png';
 import hackmerced from '../../assets/hack_merced.png';
+import reacticon from '../../assets/react.svg';
 
 //TODO:
 //Change the p tags to textarea so that the windows become resizeable.
@@ -89,6 +90,7 @@ const About = () => {
     const [aboutIsOpen, setAboutIsOpen] = useState(false);
     const [experienceIsOpen, setExperienceIsOpen] = useState(false);
     const [educationIsOpen, setEducationIsOpen] = useState(false);
+    const [skillsIsOpen, setSkillsIsOpen] = useState(false);
 
     const [isDegreeTabOpen, setIsDegreeTabOpen] = useState(true);
     const [isCoursesTabOpen, setIsCoursesTabOpen] = useState(false);
@@ -117,7 +119,7 @@ const About = () => {
                 <img src={folderIcon} draggable="false" alt='Folder Icon' className="folder-img" />
                 <p>Education</p>
             </div>
-            <div className="folder-container skills-folder">
+            <div className="folder-container skills-folder" onClick={() => setSkillsIsOpen(true)}>
                 <img src={folderIcon} draggable="false" alt='Folder Icon' className="folder-img" />
                 <p>Skills</p>
             </div>
@@ -230,12 +232,12 @@ const About = () => {
                                         <img src={ucmlogo} draggable="false" alt="The University of California, Merced Logo" />
                                     </div>
                                     <div className="univeristy-details">
-                                        <p className='university-details-section-title'>University:</p>
+                                        <p className='university-details-section-title'>University name:</p>
                                         <p>The University of California, Merced</p>
                                         <br/>
                                         <br/>
                                         <p className='university-details-section-title'>Degree:</p>
-                                        <p>Computer Science & Engineering</p>
+                                        <p>Computer Science & Engineering, Bachelor's of Science</p>
                                         <br />
                                         <br />
                                         <p className='university-details-section-title'>Graduation Date:</p>
@@ -266,7 +268,7 @@ const About = () => {
                                                     <img src={item.logo} draggable="false" alt="Google Developer Group's Logo" />
                                                 </div>
                                                 <div className="univeristy-details">
-                                                    <p className='university-details-section-title'>Club:</p>
+                                                    <p className='university-details-section-title'>Club Name:</p>
                                                     <p>{item.club}</p>
                                                     <br/>
                                                     <br/>
@@ -278,6 +280,73 @@ const About = () => {
                                     </div>
                                 </div>
                             }
+                        </div>
+                    </div>
+                </div>
+            }
+
+            {skillsIsOpen &&
+                <div className="skills-popup-window-container">
+                    <div className="window-title-bar">
+                        <div className="title-bar-left">
+                            <h2>Skills</h2>
+                        </div>
+                        <div className="title-bar-right">
+                            <img src={closeIcon} alt="Close Button Icon" draggable="false" onClick={() => setSkillsIsOpen(false)} />
+                        </div>
+                    </div>
+                    <div className="skills-window-content">
+                        <div className="skills-column">
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>JavaScript</p>
+                            </div>
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>TypeScript</p>
+                            </div>
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>React.js</p>
+                            </div>
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>Next.js</p>
+                            </div>
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>Express.js</p>
+                            </div>
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>Tailwind</p>
+                            </div>
+                        </div>
+                        <div className="skills-column">
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>C++</p>
+                            </div>
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>Java</p>
+                            </div>
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>Spring Boot</p>
+                            </div>
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>AWS</p>
+                            </div>
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>Flutter</p>
+                            </div>
+                            <div>
+                                <img src={reacticon} alt="" />
+                                <p>Dart</p>
+                            </div>
                         </div>
                     </div>
                 </div>
