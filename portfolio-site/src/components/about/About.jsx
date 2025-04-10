@@ -224,7 +224,7 @@ const About = () => {
                             {isDegreeTabOpen &&
                                 <div className="education-degree-tab">
                                     <div className="university-logo">
-                                        <img src={ucmlogo} alt="" />
+                                        <img src={ucmlogo} draggable="false" alt="The University of California, Merced Logo" />
                                     </div>
                                     <div className="univeristy-details">
                                         <p className='university-details-section-title'>University:</p>
@@ -243,7 +243,14 @@ const About = () => {
 
                             {isCoursesTabOpen &&
                                 <div className="education-courses-tab">
-
+                                    <h3>Completed Courses:</h3>
+                                    <ul className='eduction-course-list'>
+                                        <li>Introduction to Programming</li>
+                                        <li>Advanced Programming</li>
+                                        <li>Data Structures</li>
+                                        <li>Computer Organization and Assembly Language</li>
+                                        <li>Algorithm Design and Analysis</li>
+                                    </ul>
                                 </div>
                             }
 
