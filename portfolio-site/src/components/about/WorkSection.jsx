@@ -1,12 +1,10 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from '../global/images/Image';
 import useDragger from '../../hooks/useDragger';
 import { motion } from 'framer-motion';
 import { VscTriangleDown } from "react-icons/vsc";
 
 const WorkSection = () => {
-    // function for opening and closing experience description
     const [selected, setSelected] = useState(null);
     const toggle = (i) => {
         if (selected == i) {
@@ -16,8 +14,9 @@ const WorkSection = () => {
         return setSelected(i);
     };
 
-    useDragger("work-folder", 700, 420, "work-window", "open-window");
-    useDragger("work-window", 600, 200, "close-work-window", "close-window");
+    const existingPositionsRef = useRef([]);
+    useDragger("work-folder", existingPositionsRef, "work-window", "open-window");
+    useDragger("work-window", existingPositionsRef, "close-work-window", "close-window");
     return (
         <>
             <div className="folder-container work-experience-folder" id='work-folder'>

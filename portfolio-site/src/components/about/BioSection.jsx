@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from '../global/images/Image';
 import useDragger from '../../hooks/useDragger';
 
 const BioSection = () => {
-    useDragger("about-folder", 340, 330, "about-window", "open-window");
-    useDragger("about-window", 400, 100, "close-about-window", "close-window");
+    const existingPositionsRef = useRef([]);
+    useDragger("about-folder", existingPositionsRef, "about-window", "open-window");
+    useDragger("about-window", existingPositionsRef, "close-about-window", "close-window");
     return (
         <>
             <div className="folder-container about-me-folder" id='about-folder'>

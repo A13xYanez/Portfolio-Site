@@ -1,6 +1,5 @@
 import React from 'react';
 import transition from '../global/transitions/Transition'
-import Image from '../global/images/Image';
 import InfoSection from './InfoSection';
 import BioSection from './BioSection';
 import WorkSection from './WorkSection';

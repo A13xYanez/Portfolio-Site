@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from '../global/images/Image';
 import useDragger from '../../hooks/useDragger';
 
 const InfoSection = () => {
-    useDragger("info-window", 500, 300, "close-info-window", "close-window");
+    const existingPositionsRef = useRef([]);
+    useDragger("info-window", existingPositionsRef, "close-info-window", "close-window");
     return (
         <>
             <div className="info-popup-window-container" id='info-window'>

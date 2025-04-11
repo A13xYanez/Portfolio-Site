@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from '../global/images/Image';
 import useDragger from '../../hooks/useDragger';
 
 const SkillsSection = () => {
-    useDragger("skills-folder", 976, 258, "skills-window", "open-window");
-    useDragger("skills-window", 540, 130, "close-skills-window", "close-window");
+    const existingPositionsRef = useRef([]);
+    useDragger("skills-folder", existingPositionsRef, "skills-window", "open-window");
+    useDragger("skills-window", existingPositionsRef, "close-skills-window", "close-window");
     return (
         <>
             <div className="folder-container skills-folder" id='skills-folder'>

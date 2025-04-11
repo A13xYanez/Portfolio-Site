@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from '../global/images/Image';
 import useDragger from '../../hooks/useDragger';
 
@@ -7,8 +6,10 @@ const EducationSection = () => {
     const [isDegreeTabOpen, setIsDegreeTabOpen] = useState(true);
     const [isCoursesTabOpen, setIsCoursesTabOpen] = useState(false);
     const [isClubsTabOpen, setIsClubsTabOpen] = useState(false);
-    useDragger("education-folder", 541, 143, "education-window", "open-window");
-    useDragger("education-window", 250, 250, "close-education-window", "close-window");
+
+    const existingPositionsRef = useRef([]);
+    useDragger("education-folder", existingPositionsRef, "education-window", "open-window");
+    useDragger("education-window", existingPositionsRef, "close-education-window", "close-window");
     return (
         <>
             <div className="folder-container education-folder" id='education-folder'>
