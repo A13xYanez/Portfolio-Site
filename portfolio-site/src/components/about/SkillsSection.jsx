@@ -21,6 +21,7 @@ const SkillsSection = () => {
                         <Image path="windows-95-close-icon.svg" id="close-skills-window" alt="Close Button Icon" draggable="false" />
                     </div>
                 </div>
+                <div className="skills-content-wrapper">
                 <div className="skills-window-content">
                     <div className="skills-column">
                         <div>
@@ -74,6 +75,7 @@ const SkillsSection = () => {
                             <p>Dart</p>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </>
