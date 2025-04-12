@@ -73,7 +73,7 @@ const EducationSection = () => {
 
                         {isClubsTabOpen &&
                             <div className="education-clubs-tab">
-                                <div className="education-clubs-tab">
+                                <div className="education-clubs-list">
                                     {clubData.map((item, i) => (
                                         <div className="club-item" key={i}>
                                             <div className="club-logo">
