@@ -22,60 +22,60 @@ const SkillsSection = () => {
                     </div>
                 </div>
                 <div className="skills-content-wrapper">
-                <div className="skills-window-content">
-                    <div className="skills-column">
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>JavaScript</p>
+                    <div className="skills-window-content">
+                        <div className="skills-column">
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>JavaScript</p>
+                            </div>
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>TypeScript</p>
+                            </div>
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>React.js</p>
+                            </div>
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>Next.js</p>
+                            </div>
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>Express.js</p>
+                            </div>
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>Tailwind</p>
+                            </div>
                         </div>
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>TypeScript</p>
-                        </div>
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>React.js</p>
-                        </div>
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>Next.js</p>
-                        </div>
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>Express.js</p>
-                        </div>
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>Tailwind</p>
+                        <div className="skills-column">
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>C++</p>
+                            </div>
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>Java</p>
+                            </div>
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>Spring Boot</p>
+                            </div>
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>AWS</p>
+                            </div>
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>Flutter</p>
+                            </div>
+                            <div>
+                                <Image path="react-icon.svg" />
+                                <p>Dart</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="skills-column">
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>C++</p>
-                        </div>
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>Java</p>
-                        </div>
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>Spring Boot</p>
-                        </div>
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>AWS</p>
-                        </div>
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>Flutter</p>
-                        </div>
-                        <div>
-                            <Image path="react-icon.svg" />
-                            <p>Dart</p>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </>

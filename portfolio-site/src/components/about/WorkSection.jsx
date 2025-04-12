@@ -32,33 +32,37 @@ const WorkSection = () => {
                         <Image path="windows-95-close-icon.svg" id="close-work-window" alt="Close Button Icon" draggable="false" />
                     </div>
                 </div>
-                {workData.map((item, i) => (
-                    <div className="work-experience-window-content" key={i}>
-                        <div className="work-experience-item" onClick={() => toggle(i)}>
-                            <div className="work-experience-info">
-                                <Image path={item.logo} alt={item.altText} draggable="false" />
-                                <div className="group-timeline-position">
-                                    <div className="work-experience-position">
-                                        <p>{item.company}</p>
-                                        <p>{item.title}</p>
-                                    </div>
-                                    <div className="work-experience-timeline">
-                                        <div className={`flicker-light ${item.status}`}>
-                                            <div />
+                <div className="work-content-wrapper">
+                    <div className="work-experience-window-content">
+                        {workData.map((item, i) => (
+                            <div className="work-experience-item" key={i} onClick={() => toggle(i)}>
+                                <div className='work-experience-dropdown'>
+                                    <div className="work-experience-info">
+                                        <Image path={item.logo} alt={item.altText} draggable="false" />
+                                        <div className="group-timeline-position">
+                                            <div className="work-experience-position">
+                                                <p>{item.company}</p>
+                                                <p>{item.title}</p>
+                                            </div>
+                                            <div className="work-experience-timeline">
+                                                <div className={`flicker-light ${item.status}`}>
+                                                    <div />
+                                                </div>
+                                                <p>{item.timeline}</p>
+                                            </div>
                                         </div>
-                                        <p>{item.timeline}</p>
                                     </div>
+                                    <motion.div initial={{ rotate: 0}} animate={{ rotate: selected == i ? -180 : 0, transition: { duration: 0.25 }}}>
+                                        <VscTriangleDown className='expand-down-icon' />
+                                    </motion.div>
+                                </div>
+                                <div className={selected == i ? "work-experience-description show-description" : "work-experience-description"}>
+                                    <p>{item.description}</p>
                                 </div>
                             </div>
-                            <motion.div initial={{ rotate: 0}} animate={{ rotate: selected == i ? -180 : 0, transition: { duration: 0.25 }}}>
-                                <VscTriangleDown className='expand-down-icon' />
-                            </motion.div>
-                        </div>
-                        <div className={selected == i ? "work-experience-description show-description" : "work-experience-description"}>
-                            <p>{item.description}</p>
-                        </div>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
         </>
     );

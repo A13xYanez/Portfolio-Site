@@ -21,8 +21,10 @@ const BioSection = () => {
                         <Image path="windows-95-close-icon.svg" id="close-about-window" alt="Close Button Icon" draggable="false" />
                     </div>
                 </div>
-                <div className="about-window-content">
-                    <p>About me stuff</p>
+                <div className="about-content-wrapper">
+                    <div className="about-window-content">
+                        <p>About me stuff</p>
+                    </div>
                 </div>
             </div>
         </>
