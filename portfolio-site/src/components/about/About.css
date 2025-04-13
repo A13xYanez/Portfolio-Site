@@ -46,26 +46,6 @@
     user-select: none;
 }
 
-.about-me-folder {
-    left: 340px;
-    top: 330px;
-}
-
-.work-experience-folder {
-    left: 700px;
-    top: 420px;
-}
-
-.education-folder {
-    left: 541px;
-    top: 143px;
-}
-
-.skills-folder {
-    left: 976px;
-    top: 258px;
-}
-
 .folder-img {
     object-fit: contain;
     width: 90px;

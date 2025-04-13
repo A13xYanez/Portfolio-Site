@@ -4,8 +4,8 @@ import useDragger from '../../hooks/useDragger';
 
 const BioSection = () => {
     const existingPositionsRef = useRef([]);
-    useDragger("about-folder", existingPositionsRef, "about-window", "open-window");
-    useDragger("about-window", existingPositionsRef, "close-about-window", "close-window");
+    useDragger("about-folder", existingPositionsRef, "about-window", "open-window", 0.5);
+    useDragger("about-window", existingPositionsRef, "close-about-window", "close-window", 0.25);
     return (
         <>
             <div className="folder-container about-me-folder" id='about-folder'>

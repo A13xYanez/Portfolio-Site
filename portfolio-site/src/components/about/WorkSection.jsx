@@ -15,8 +15,8 @@ const WorkSection = () => {
     };
 
     const existingPositionsRef = useRef([]);
-    useDragger("work-folder", existingPositionsRef, "work-window", "open-window");
-    useDragger("work-window", existingPositionsRef, "close-work-window", "close-window");
+    useDragger("work-folder", existingPositionsRef, "work-window", "open-window", 0.5);
+    useDragger("work-window", existingPositionsRef, "close-work-window", "close-window", 0.25);
     return (
         <>
             <div className="folder-container work-experience-folder" id='work-folder'>

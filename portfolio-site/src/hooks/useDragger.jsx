@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const useDragger = (elementID, existingPositionsRef, elementToggles, toggleEvent) => {
+const useDragger = (elementID, existingPositionsRef, elementToggles, toggleEvent, spawnPosition) => {
   const isClicked = useRef(false);
   const coords = useRef({ startX: 0, startY: 0, lastX: 0, lastY: 0 });
 
@@ -9,8 +9,8 @@ const useDragger = (elementID, existingPositionsRef, elementToggles, toggleEvent
     const maxAttempts = 50;
     const centerX = containerRect.width / 2;
     const centerY = containerRect.height / 2;
-    const spawnRangeX = containerRect.width * 0.25;
-    const spawnRangeY = containerRect.height * 0.25;
+    const spawnRangeX = containerRect.width * spawnPosition;
+    const spawnRangeY = containerRect.height * spawnPosition;
 
     for (let i = 0; i < maxAttempts; i++) {
       const left = centerX - spawnRangeX / 2 + Math.random() * spawnRangeX;

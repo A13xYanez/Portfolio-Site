@@ -8,8 +8,8 @@ const EducationSection = () => {
     const [isClubsTabOpen, setIsClubsTabOpen] = useState(false);
 
     const existingPositionsRef = useRef([]);
-    useDragger("education-folder", existingPositionsRef, "education-window", "open-window");
-    useDragger("education-window", existingPositionsRef, "close-education-window", "close-window");
+    useDragger("education-folder", existingPositionsRef, "education-window", "open-window", 0.5);
+    useDragger("education-window", existingPositionsRef, "close-education-window", "close-window", 0.25);
     return (
         <>
             <div className="folder-container education-folder" id='education-folder'>

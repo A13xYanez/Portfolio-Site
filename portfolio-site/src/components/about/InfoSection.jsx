@@ -4,7 +4,7 @@ import useDragger from '../../hooks/useDragger';
 
 const InfoSection = () => {
     const existingPositionsRef = useRef([]);
-    useDragger("info-window", existingPositionsRef, "close-info-window", "close-window");
+    useDragger("info-window", existingPositionsRef, "close-info-window", "close-window", 0.25);
     return (
         <>
             <div className="info-popup-window-container" id='info-window'>

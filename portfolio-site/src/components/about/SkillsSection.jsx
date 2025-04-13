@@ -4,8 +4,8 @@ import useDragger from '../../hooks/useDragger';
 
 const SkillsSection = () => {
     const existingPositionsRef = useRef([]);
-    useDragger("skills-folder", existingPositionsRef, "skills-window", "open-window");
-    useDragger("skills-window", existingPositionsRef, "close-skills-window", "close-window");
+    useDragger("skills-folder", existingPositionsRef, "skills-window", "open-window", 0.5);
+    useDragger("skills-window", existingPositionsRef, "close-skills-window", "close-window", 0.25);
     return (
         <>
             <div className="folder-container skills-folder" id='skills-folder'>
