@@ -38,7 +38,7 @@
     position: absolute;
     height: 250px;
     width: 80%;
-    background: radial-gradient(ellipse 50% 50px, #6353a0, #2f1d5c 10%, #261b43 50%, #2f1d5c);
+    background: radial-gradient(ellipse 50% 50px, #4CB2AF, #2f1d5c 10%, #4CB2AF 50%, #2f1d5c);
     filter: blur(1000px);
     transform: rotate(-15deg);
     border-radius: 50%;

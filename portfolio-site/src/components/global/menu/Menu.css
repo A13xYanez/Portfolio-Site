@@ -15,11 +15,17 @@
     flex-direction: column;
 }
 
-.link-icon {
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-} 
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.menu-links div {
+    margin-block: 10px;
+}
 
 .menu-icon {
     width: 90%;

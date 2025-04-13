@@ -5,34 +5,33 @@ import { NavLink } from 'react-router-dom';
 import './Menu.css';
 
 import { IoMenu } from "react-icons/io5";
-import { VscBriefcase } from "react-icons/vsc";
-import { VscBook } from "react-icons/vsc";
-import { VscComment } from "react-icons/vsc";
-import { VscHome } from "react-icons/vsc";
+import { IoClose } from "react-icons/io5";
 
 const Menu = () => {
-    const [openMenu, setOpenMenu] = useState(false);
+    const [openMenu, setOpenMenu] = useState(true);
     
     return (
         <div>
             <motion.div
                 initial={false}
-                animate={{bottom: openMenu ? 0 : -152, transition: {ease: easeInOut}}}
+                animate={{bottom: openMenu ? 0 : -100, transition: {ease: easeInOut}}}
                 className="menu-controls"
             >
-                <IoMenu className='menu-icon' onClick={() => setOpenMenu(!openMenu)} />
-                <div>
+                <IoMenu className='menu-icon' onClick={() => setOpenMenu(true)} 
+                    style={{scale: !openMenu ? 1 : 0, position: !openMenu ? 'relative' : 'absolute', transition: !openMenu ? `.5s` : '0s', pointerEvents: !openMenu ? 'all' : 'none'}} 
+                />
+                <IoClose className='menu-icon' onClick={() => setOpenMenu(false)}
+                    style={{scale: openMenu ? 1 : 0, position: openMenu ? 'relative' : 'absolute', transition: openMenu ? `.5s` : '0s', pointerEvents: openMenu ? 'all' : 'none'}} 
+                />
+                <div className='menu-links'>
                     <div>
-                        <NavLink to='/'><VscHome className='link-icon' /></NavLink>
+                        <NavLink to='/' onClick={() => setOpenMenu(!openMenu)}>Home</NavLink>
                     </div>
                     <div>
-                        <NavLink to='/about'><VscBook className='link-icon' /></NavLink>
+                        <NavLink to='/about' onClick={() => setOpenMenu(!openMenu)}>About</NavLink>
                     </div>
                     <div>
-                        <NavLink to='/projects'><VscBriefcase className='link-icon' /></NavLink>
-                    </div>
-                    <div>
-                        <NavLink to='/contact'><VscComment className='link-icon' /></NavLink>
+                        <NavLink to='/projects' onClick={() => setOpenMenu(!openMenu)}>Works</NavLink>
                     </div>
                 </div>
             </motion.div>
