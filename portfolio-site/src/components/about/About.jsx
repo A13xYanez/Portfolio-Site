@@ -12,9 +12,7 @@ import './About.css'
 //Set a minimun and max width and height so that they cannot be too small or big.
 
 //FIXME:
-// have folders remain spawning in the center of the screen randomly
-// but have them not overlap at all.
-// As for the windows, they can remain spawning in the center stacking ontop of
+// for the windows, they can remain spawning in the center stacking ontop of
 // on another but update it so that the newest window that gets opened is stacked
 // at the very top instead of being burried under the other windows when opened.
 
