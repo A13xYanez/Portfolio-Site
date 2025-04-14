@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import transition from '../global/transitions/Transition';
 import './Contact.css';
 
 const Contact = () => {
@@ -49,8 +50,25 @@ const Contact = () => {
         }
     };
 
+    let min = 10;
+    let max = 30;
+    let random = 0;
+    const lines = [];
+
+    for (let i = 0; i < 150; i++) {
+        random = Math.floor(Math.random() * (max - min + 1)) + min;
+        lines.push(
+            <li style={{ "--i": random  }}></li>
+        )
+    };
+    
     return (
         <div className="contain-contact">
+            <div className="matrix-background">
+                <ul>
+                    {lines}
+                </ul>
+            </div>
             <form onSubmit={(e) => handleSubmit(e)} autoComplete='off'>
                 <h2>Contact Me</h2>
                 <div className={formErrors.name && formValues.name ? "form-invalid-with-content" 
@@ -90,4 +108,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default transition(Contact);
