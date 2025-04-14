@@ -64,10 +64,11 @@ const Contact = () => {
     
     return (
         <div className="contain-contact">
-            <div className="matrix-background">
+            <div className="auroa-background">
                 <ul>
                     {lines}
                 </ul>
+                <div className="auroa-blur"></div>
             </div>
             <form onSubmit={(e) => handleSubmit(e)} autoComplete='off'>
                 <h2>Contact Me</h2>
