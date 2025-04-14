@@ -1,0 +1,250 @@
+/* Contact CSS */
+.contain-contact {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Contact Form */
+form {
+    /*background: rgba(197, 197, 197, 0.22);*/
+    background: rgba(22, 22, 22, 0.22);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(197, 197, 197, 0.22);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 6px;
+    max-width: 576px;
+    width: 100%;
+    margin: 0 16px;
+    display: block;
+    font-family: var(--font);
+    color: var(--white);
+    transition: 0.5s;
+    z-index: 3;
+}
+
+form:hover {
+    transform: scale(1.03);
+}
+
+form h2 {
+    text-align: center;
+    font-weight: var(--bold);
+    margin-bottom: 26px;
+}
+
+form .form {
+    margin-bottom: 16px;
+}
+
+form .form .form-inputs {
+    position: relative;
+    width: 100%;
+}
+
+form .form .form-inputs input,
+form .form .form-inputs textarea {
+    padding: 12px;
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid  #bbb;
+    resize: none;
+    outline: none;
+    color: var(--white);
+    background: transparent;
+}
+
+form .form .form-inputs label {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    color: var(--white);
+    transform: translateY(-50%);
+    padding: 0 2px;
+    transition: 0.3s ease;
+}
+
+form .form .form-inputs textarea ~ label {
+    top: 8px;
+    transform: unset;
+}
+
+form .form .form-inputs input:focus,
+form .form .form-inputs textarea:focus {
+    border: 2px solid #147df5;
+}
+
+form .form .form-inputs input:focus ~ label,
+form .form .form-inputs textarea:focus ~ label {
+    top: -10px;
+    font-size: 13px;
+    font-weight: var(--regular);
+    background: #147df5;
+    color: var(--white);
+    transform: unset;
+    border-radius: 2px;
+}
+
+input::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+}
+
+form button {
+    padding: 10px 30px;
+    background: transparent;
+    color: #147df5;
+    border: 2px solid #147df5;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: var(--bold);
+}
+
+form button:hover {
+    background-color: #147df5;
+    color: var(--white);
+}
+
+form .content-in-form {
+    margin-bottom: 16px;
+}
+
+form .content-in-form .form-inputs {
+    position: relative;
+    width: 100%;
+}
+
+form .content-in-form .form-inputs input,
+form .content-in-form .form-inputs textarea {
+    padding: 12px;
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid  #147df5;
+    resize: none;
+    outline: none;
+    background: transparent;
+    color: var(--white);
+}
+
+form .content-in-form .form-inputs label {
+    position: absolute;
+    left: 8px;
+    top: -10px;
+    font-size: 13px;
+    font-weight: var(--regular);
+    background: #147df5;
+    color: var(--white);
+    transform: unset;
+    border-radius: 2px;
+    padding: 0 2px;
+    transition: 0.3s ease;
+}
+
+form .content-in-form .form-inputs textarea ~ label {
+    top: -10px;
+    font-size: 13px;
+    font-weight: var(--regular);
+    background: #147df5;
+    color: var(--white);
+    transform: unset;
+    border-radius: 2px;
+}
+
+form .form-invalid .form-inputs label {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    color: var(--white);
+    transform: translateY(-50%);
+    padding: 0 2px;
+    transition: 0.3s ease;
+}
+
+form .form-invalid .form-inputs textarea ~ label {
+    top: 8px;
+    transform: unset;
+}
+
+form .form-invalid .form-inputs input:focus ~ label,
+form .form-invalid .form-inputs textarea:focus ~ label {
+    top: -10px;
+    font-size: 13px;
+    font-weight: var(--regular);
+    background: var(--red);
+    color: var(--white);
+    transform: unset;
+    border-radius: 2px;
+}
+
+form .form-invalid, .form-invalid-with-content {
+    margin-bottom: 16px;
+}
+
+form .form-invalid, .form-invalid-with-content small {
+    color: var(--red);
+}
+
+form .form-invalid .form-inputs, .form-invalid-with-content .form-inputs {
+    position: relative;
+    width: 100%;
+}
+
+form .form-invalid .form-inputs input,
+form .form-invalid .form-inputs textarea,
+form .form-invalid-with-content .form-inputs input,
+form .form-invalid-with-content .form-inputs textarea {
+    padding: 12px;
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid var(--red);
+    resize: none;
+    outline: none;
+    background: transparent;
+    color: var(--white);
+}
+
+form .form-invalid-with-content .form-inputs label {
+    position: absolute;
+    left: 8px;
+    top: -10px;
+    font-size: 13px;
+    font-weight: var(--regular);
+    background: var(--red);
+    color: var(--white);
+    transform: unset;
+    border-radius: 2px;
+    padding: 0 2px;
+    transition: 0.3s ease;
+}
+
+form .form-invalid-with-content .form-inputs textarea ~ label {
+    top: -10px;
+    font-size: 13px;
+    font-weight: var(--regular);
+    background: var(--red);
+    color: var(--white);
+    transform: unset;
+    border-radius: 2px;
+}
+
+
+
+/* 3D Robot */
+.robot {
+    position: absolute;
+    width: 50%;
+    right: 0px;
+    bottom: -250px;
+    z-index: 1000;
+    pointer-events: none;
+}
