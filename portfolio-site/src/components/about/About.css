@@ -284,7 +284,9 @@
 
 .work-experience-description.show-description {
     height: fit-content;
-    max-height: 150px;
+    max-height: 100px;
+    overflow-y: auto;
+    overscroll-behavior: none;
     transition: all 0.25s cubic-bezier(1, 0, 1, 0);
 }
 
@@ -415,8 +417,8 @@
 
 .club-logo {
     background: #ffffff;
-    height: 150px;
-    width: 150px;
+    min-height: 150px;
+    min-width: 150px;
     max-width: 150px;
     max-height: 150px;
     padding: 5px;
@@ -510,10 +512,8 @@
 
     .club-logo, .university-logo {
         aspect-ratio: 1 / 1;
-        width: 30%;
         min-width: 75px;
         height: fit-content;
-        padding: 0;
         margin-bottom: 20px;
     }
 

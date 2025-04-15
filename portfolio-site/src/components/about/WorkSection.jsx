@@ -57,7 +57,9 @@ const WorkSection = () => {
                                     </motion.div>
                                 </div>
                                 <div className={selected == i ? "work-experience-description show-description" : "work-experience-description"}>
-                                    <p>{item.description}</p>
+                                    <p>{item.descriptionLine1}</p>
+                                    <p>{item.descriptionLine2}</p>
+                                    <p>{item.descriptionLine3}</p>
                                 </div>
                             </div>
                         ))}
@@ -75,8 +77,10 @@ const workData = [
         title: "Full-Stack Developer",
         timeline: "Feb 2025 - Present",
         status: "in-progress",
-        description: "enter descripton here",
-        altText: "UNiFOODi Logo"
+        altText: "UNiFOODi Logo",
+        descriptionLine1: "I am currently developing a Flutter application with my team that uses HLS to stream content to the user.",
+        descriptionLine2: "The app integrates Google Gemini by processing live stream data and triggering notifications based on in-stream events.",
+        descriptionLine3: "We are actively debugging and meeting frequently to ensure that our application is ready and runs soothly for its soft launch, which is coming soon."
     },
     {
         logo: "vista-logo.jpg",
@@ -84,8 +88,11 @@ const workData = [
         title: "Web Developer",
         timeline: "Jan 2025 - Present",
         status: "in-progress",
-        description: "enter descripton here",
-        altText: "Valley Institute for Sustainability, Technology, and Agriculture Logo"
+        altText: "Valley Institute for Sustainability, Technology, and Agriculture Logo",
+        descriptionLine1: "Led front-end development efforts focused on enhancing web performance, accessibility, and mobile usuability.",
+        descriptionLine2: "By modernizing VISTA and its affiliated sites, such as implementing adaptive design techniques, my efforts led to a 32% increase in mobile traffic and a 47% increase in session duration.",
+        descriptionLine3: "In addition, I developed reusable WordPress components with HTML, CSS, and JavaScript to ensure seamless integration and consistency across all sites."
+
     },
     {
         logo: "bay-valley-tech-logo.jpg",
@@ -93,8 +100,10 @@ const workData = [
         title: "Full-Stack Developer",
         timeline: "Mar 2024 - Aug 2024",
         status: "completed",
-        description: "enter descripton here",
-        altText: "Bay Valley Tech Logo"
+        altText: "Bay Valley Tech Logo",
+        descriptionLine1: "Automated API testing by developing a tool in Python that ensured consistent request performance, effectively reducing my team's time spent testing by 40%.",
+        descriptionLine2: "Throughout the development process, I collaborated closely with my team, using GitHub to communicate changes regularly, create and review pull requests, and maintain clean version control practices to support smooth, stable deployments.",
+        descriptionLine3: "Some projects I was involved in include developing an authenticator to manage and authenticate employees, built on React.js, Express.js, MongoDB, and Docker."
     }
 ];
 

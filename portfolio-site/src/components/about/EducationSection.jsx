@@ -53,7 +53,7 @@ const EducationSection = () => {
                                     <br />
                                     <br />
                                     <p className='university-details-section-title'>Graduation Date:</p>
-                                    <p>Expected 2026</p>
+                                    <p>Expected 2027</p>
                                 </div>
                             </div>
                         }
@@ -101,22 +101,22 @@ const EducationSection = () => {
 
 const clubData = [
     {
-        logo: "google-developer-group-logo.png",
-        club: "Google Developer Group",
-        description: "description here",
-        altText: "Google Developer Group Logo"
+        logo: "hack-merced-logo.png",
+        club: "Hack Merced",
+        altText: "Hack Merced Logo",
+        description: "Organizer and judge for Hack Merced's annual hackathon. As an organizer, I helped maintain the website and develop a live page for particiates to sign in and access at the time of the event."
     },
     {
         logo: "acm-logo.png",
         club: "Association for Computing Machinery",
-        description: "description here",
-        altText: "Association for Computing Machinery Logo"
+        altText: "Association for Computing Machinery Logo",
+        description: "Web developer for ACM's branch at UC Merced. I played a role in rebuilding UC Merced's ACM legacy codebase to be more maintainable and include more features for the hundreds of club members in UC Merced's ACM."
     },
     {
-        logo: "hack-merced-logo.png",
-        club: "Hack Merced",
-        description: "description here",
-        altText: "Hack Merced Logo"
+        logo: "google-developer-group-logo.png",
+        club: "Google Developer Group",
+        altText: "Google Developer Group Logo",
+        description: "As a member of the Google Devloper Group branch at UC Merced, I activly engage in the clubs weekly meeting and workshop's.",
     }
 ];
 

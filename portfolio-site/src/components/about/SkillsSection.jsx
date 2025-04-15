@@ -2,6 +2,9 @@ import React, { useRef } from 'react';
 import Image from '../global/images/Image';
 import useDragger from '../../hooks/useDragger';
 
+
+// TODO: Organize skills by languages and frameworks
+
 const SkillsSection = () => {
     const existingPositionsRef = useRef([]);
     useDragger("skills-folder", existingPositionsRef, "skills-window", "open-window", 0.5);
@@ -25,11 +28,11 @@ const SkillsSection = () => {
                     <div className="skills-window-content">
                         <div className="skills-column">
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="javascript-icon.svg" />
                                 <p>JavaScript</p>
                             </div>
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="typescript-icon.svg" />
                                 <p>TypeScript</p>
                             </div>
                             <div>
@@ -37,41 +40,41 @@ const SkillsSection = () => {
                                 <p>React.js</p>
                             </div>
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="nextjs-icon.svg" />
                                 <p>Next.js</p>
                             </div>
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="express-icon.svg" />
                                 <p>Express.js</p>
                             </div>
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="tailwindcss-icon.svg" />
                                 <p>Tailwind</p>
                             </div>
                         </div>
                         <div className="skills-column">
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="cplusplus-icon.svg" />
                                 <p>C++</p>
                             </div>
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="java-icon.svg" />
                                 <p>Java</p>
                             </div>
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="spring-icon.svg" />
                                 <p>Spring Boot</p>
                             </div>
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="amazonwebservices-icon.svg" />
                                 <p>AWS</p>
                             </div>
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="flutter-icon.svg" />
                                 <p>Flutter</p>
                             </div>
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="dart-icon.svg" />
                                 <p>Dart</p>
                             </div>
                         </div>

@@ -244,7 +244,7 @@ form .form-invalid-with-content .form-inputs textarea ~ label {
     position: absolute;
     width: 50%;
     right: 0px;
-    bottom: -35%;
+    bottom: -30%;
     z-index: 1000;
     pointer-events: none;
     animation: slideUp 2s;
@@ -255,13 +255,13 @@ form .form-invalid-with-content .form-inputs textarea ~ label {
         bottom: -100%;
     }
     to {
-        bottom: -35%;
+        bottom: -30%;
     }
 }
 
 
 
-/* Matrix Background */
+/* Auroa Background */
 .auroa-background {
     width: 100%;
     height: 100%;
@@ -283,19 +283,18 @@ form .form-invalid-with-content .form-inputs textarea ~ label {
     list-style: none;
     opacity: 0;
     border-radius: 100%;
-    background: radial-gradient(#4CB2AF, transparent, transparent);
+    background: radial-gradient(#39FF14, transparent, transparent);
     animation: auroa 15s linear infinite;
     animation-duration: calc(200s / var(--i));;
 }
 
 .auroa-background ul li:nth-child(even) {
-    background: radial-gradient(#4CB2AF, #2f1d5c, transparent);
+    background: radial-gradient(#39FF14, #004953, transparent);
 }
 
 .auroa-blur {
-    background: rgba(22, 22, 22, 0);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -312,4 +311,3 @@ form .form-invalid-with-content .form-inputs textarea ~ label {
         transform: translateY(-10vh);
     }
 }
-
