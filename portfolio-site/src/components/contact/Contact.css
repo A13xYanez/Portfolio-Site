@@ -283,13 +283,13 @@ form .form-invalid-with-content .form-inputs textarea ~ label {
     list-style: none;
     opacity: 0;
     border-radius: 100%;
-    background: radial-gradient(#39FF14, transparent, transparent);
+    background: radial-gradient(#4CB2AF, transparent, transparent);
     animation: auroa 15s linear infinite;
     animation-duration: calc(200s / var(--i));;
 }
 
 .auroa-background ul li:nth-child(even) {
-    background: radial-gradient(#39FF14, #004953, transparent);
+    background: radial-gradient(#4CB2AF, #2f1d5c, transparent);
 }
 
 .auroa-blur {

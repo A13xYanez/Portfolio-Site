@@ -28,8 +28,9 @@
 }
 
 .menu-icon {
-    width: 90%;
-    height: 90%;
+    width: 40.5px;
+    height: 40.5px;
+    min-height: 40.5px;
     cursor: pointer;
     z-index: 2;
     background-color: #282828;
@@ -45,7 +46,8 @@
     }
 
     .menu-icon {
-        height: 100%;
-        width: 100%;
+        min-height: 45px;
+        height: 45px;
+        width: 45px;
     }
 }

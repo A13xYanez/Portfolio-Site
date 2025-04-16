@@ -40,6 +40,7 @@
     width: 80%;
     background: radial-gradient(ellipse 50% 50px, #4CB2AF, #2f1d5c 10%, #4CB2AF 50%, #2f1d5c);
     filter: blur(1000px);
+    -webkit-filter: blur(45px);
     transform: rotate(-15deg);
     border-radius: 50%;
     z-index: 0;
