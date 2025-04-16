@@ -1,14 +1,21 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { easeInOut, motion } from 'framer-motion';
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import './Nav.css';
 
-const Nav = () => {
-    const [openNav, setOpenNav] = useState(false);
+const Nav = ({ page }) => {
+    const [openNav, setOpenNav] = useState(true);
 
+    useEffect(() => {
+        if (page == '/') {
+            setOpenNav(true);
+        } else {
+            setOpenNav(false);
+        }
+    }, [page]);
+    
     return (
         <nav>
             <motion.div 

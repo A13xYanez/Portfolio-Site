@@ -15,7 +15,7 @@ function App() {
   return (
     <div className='contain-app'>
       <div className="app-contents">
-        <Nav />
+        <Nav page={location.pathname} />
         <Menu />
         <AnimatePresence mode='wait'>
           <Routes location={location} key={location.pathname}>

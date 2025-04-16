@@ -108,9 +108,9 @@
 
 .project-details {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column-reverse;
 }
 
 .project-skills {
@@ -147,9 +147,23 @@
     cursor: pointer;
 }
 
+.project-link {
+    display: flex;
+    margin-top: 10px;
+}
+
+.project-link:nth-child(2) {
+    padding-left: 10px;
+    border-left: 1px solid var(--white);
+    margin-left: 10px;
+}
+
+.project-link h2 {
+    margin-right: 5px;
+}
+
 .project-link-icon {
     font-size: clamp(12px, .5rem + .75vw, 24px);
-    top: -1.5px;
     position: relative;
 }
 
