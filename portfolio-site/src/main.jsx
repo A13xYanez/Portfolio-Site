@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import '@splinetool/viewer';
 import './index.css'
 import App from './App.jsx'
 

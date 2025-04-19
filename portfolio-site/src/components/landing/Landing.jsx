@@ -10,7 +10,7 @@ const Landing = () => {
                 <h2>Full-Stack Developer</h2>
             </div>
             <div className="gradient"></div>
-                <spline-viewer className="planet" url="https://prod.spline.design/Zrxlwv5n5Gc0cpJy/scene.splinecode"></spline-viewer>
+                <spline-viewer loading="eager" className="planet" url="https://prod.spline.design/Zrxlwv5n5Gc0cpJy/scene.splinecode"></spline-viewer>
             <div className="block"></div>
         </main>
     );

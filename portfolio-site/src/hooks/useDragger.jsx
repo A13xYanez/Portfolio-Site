@@ -1,9 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 
-const useDragger = (elementID, existingPositionsRef, elementToggles, toggleEvent, spawnPosition) => {
+const useDragger = (
+  elementID,
+  existingPositionsRef,
+  elementToggles,
+  toggleEvent,
+  spawnPosition,
+  forceCenter = false
+) => {
   const isClicked = useRef(false);
   const coords = useRef({ startX: 0, startY: 0, lastX: 0, lastY: 0 });
-
 
   const getNonOverlappingRandomPosition = (containerRect, elementRect) => {
     const maxAttempts = 50;
@@ -42,12 +48,11 @@ const useDragger = (elementID, existingPositionsRef, elementToggles, toggleEvent
       left: fallbackLeft,
       top: fallbackTop,
       right: fallbackLeft + elementRect.width,
-      bottom: fallbackTop + elementRect.height
+      bottom: fallbackTop + elementRect.height,
     });
 
     return { left: fallbackLeft, top: fallbackTop };
   };
-
 
   useEffect(() => {
     const target = document.getElementById(elementID);
@@ -58,10 +63,19 @@ const useDragger = (elementID, existingPositionsRef, elementToggles, toggleEvent
 
     const containerRect = container.getBoundingClientRect();
     const targetRect = target.getBoundingClientRect();
-
     const targetToggles = document.getElementById(elementToggles);
 
-    const { left, top } = getNonOverlappingRandomPosition(containerRect, targetRect);
+    let left, top;
+
+    if (forceCenter) {
+      left = (containerRect.width - targetRect.width) / 2;
+      top = (containerRect.height - targetRect.height) / 2;
+    } else {
+      const position = getNonOverlappingRandomPosition(containerRect, targetRect);
+      left = position.left;
+      top = position.top;
+    }
+
     target.style.left = `${left}px`;
     target.style.top = `${top}px`;
     coords.current.lastX = left;
@@ -77,9 +91,9 @@ const useDragger = (elementID, existingPositionsRef, elementToggles, toggleEvent
       coords.current.lastY = target.offsetTop;
     };
 
-
     const onMouseMove = (e) => {
       if (!isClicked.current) return;
+
       const nextX = e.clientX - coords.current.startX + coords.current.lastX;
       const nextY = e.clientY - coords.current.startY + coords.current.lastY;
 
@@ -94,7 +108,6 @@ const useDragger = (elementID, existingPositionsRef, elementToggles, toggleEvent
       target.style.cursor = "grabbing";
     };
 
-
     const onMouseUp = () => {
       isClicked.current = false;
       target.style.cursor = "pointer";
@@ -102,14 +115,12 @@ const useDragger = (elementID, existingPositionsRef, elementToggles, toggleEvent
       coords.current.lastY = target.offsetTop;
     };
 
-
     const onDoubleClick = () => {
       if (!targetToggles) return;
 
       targetToggles.style.visibility = "hidden";
       targetToggles.style.display = "block";
 
-      const containerRect = container.getBoundingClientRect();
       const popupWidth = targetToggles.offsetWidth;
       const popupHeight = targetToggles.offsetHeight;
 
@@ -128,6 +139,9 @@ const useDragger = (elementID, existingPositionsRef, elementToggles, toggleEvent
       targetToggles.style.visibility = "visible";
     };
 
+    const onClick = () => {
+      if (targetToggles) target.style.display = "none";
+    };
 
     const onResize = () => {
       const maxX = container.clientWidth - target.offsetWidth;
@@ -143,34 +157,25 @@ const useDragger = (elementID, existingPositionsRef, elementToggles, toggleEvent
       coords.current.lastY = top;
     };
 
-
-    const onClick = () => {
-        if (targetToggles) target.style.display = "none";
-    };
-
-
-    const cleanUp = () => {
-      target.removeEventListener("mousedown", onMouseDown);
-      target.removeEventListener("mouseup", onMouseUp);
-      container.removeEventListener("mousemove", onMouseMove);
-      container.removeEventListener("mouseleave", onMouseUp);
-      window.removeEventListener("resize", onResize);
-
-      if (toggleEvent === "open-window") target.removeEventListener('dblclick', onDoubleClick);
-      if (toggleEvent === "close-window" && targetToggles) targetToggles.removeEventListener('click', onClick);
-    };
-
-
     target.addEventListener("mousedown", onMouseDown);
     target.addEventListener("mouseup", onMouseUp);
     container.addEventListener("mousemove", onMouseMove);
     container.addEventListener("mouseleave", onMouseUp);
     window.addEventListener("resize", onResize);
 
-    if (toggleEvent === "open-window") target.addEventListener('dblclick', onDoubleClick);
-    if (toggleEvent === "close-window" && targetToggles) targetToggles.addEventListener('click', onClick);
+    if (toggleEvent === "open-window") target.addEventListener("dblclick", onDoubleClick);
+    if (toggleEvent === "close-window" && targetToggles) targetToggles.addEventListener("click", onClick);
 
-    return cleanUp;
+    return () => {
+      target.removeEventListener("mousedown", onMouseDown);
+      target.removeEventListener("mouseup", onMouseUp);
+      container.removeEventListener("mousemove", onMouseMove);
+      container.removeEventListener("mouseleave", onMouseUp);
+      window.removeEventListener("resize", onResize);
+
+      if (toggleEvent === "open-window") target.removeEventListener("dblclick", onDoubleClick);
+      if (toggleEvent === "close-window" && targetToggles) targetToggles.removeEventListener("click", onClick);
+    };
   }, [elementID]);
 };
 

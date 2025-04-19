@@ -108,7 +108,7 @@ const projectData = [
         title: "Portfolio",
         img: "portfolio-project.png",
         websiteLink: "https://alex-yanez.me",
-        sourceCodeLink: "",
+        sourceCodeLink: "https://github.com/A13xYanez/Portfolio-Site",
         skills: [
             "javascript-icon.svg",
             "react-icon.svg",

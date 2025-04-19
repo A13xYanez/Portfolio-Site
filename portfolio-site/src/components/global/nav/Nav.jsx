@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from '../images/Image';
 import { Link } from 'react-router-dom';
 import { easeInOut, motion } from 'framer-motion';
 import { FaGithub } from "react-icons/fa";
@@ -22,7 +23,7 @@ const Nav = ({ page }) => {
             initial={false}
             animate={{top: openNav ? 0 : -90, transition: {ease: easeInOut}}}
             className="contain-nav-controlls">
-                <img src='/logo.svg' className='nav-logo' onClick={() => setOpenNav(!openNav)} />
+                <Image path='website-logo.svg' className='nav-logo' onClick={() => setOpenNav(!openNav)} />
                 <div>
                     <div>
                         <Link to='https://www.linkedin.com/in/a13x-yanez/'><FaLinkedin className='nav-link-icon' /></Link>

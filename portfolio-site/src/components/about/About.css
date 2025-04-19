@@ -59,8 +59,6 @@
     width: 475px;
     height: 270px;
     position: absolute;
-    left: 500px;
-    top: 300px;
     background: #c0c0c0;
     border-bottom: 2px solid #808080;
     border-right: 2px solid #808080;
@@ -208,6 +206,7 @@
 .work-experience-info {
     display: flex;
     align-items: center;
+    color: #0a0a0a;
 }
 
 .work-experience-position {
@@ -220,7 +219,6 @@
 .work-experience-position p:first-child {
     font-size: 14px;
     font-weight: 900;
-    color: #0a0a0a;
 }
 
 .group-timeline-position {
@@ -242,16 +240,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: pulse 3s infinite;
 }
 
 .completed {
-    background: #00563B;
-    box-shadow: 0 0 5px 0 #00563B;
+    background: #39FF14;
+    box-shadow: 0 0 5px 0 #39FF14;
 }
 
 .in-progress {
-    background: #00416A;
-    box-shadow: 0 0 5px 0 #00416A;
+    background: #147df5;
+    box-shadow: 0 0 5px 0 #147df5;
+}
+
+.planned {
+    background: #BF00FF;
+    box-shadow: 0 0 5px 0 #BF00FF;
 }
 
 .flicker-light div {

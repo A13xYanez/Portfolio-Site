@@ -78,9 +78,9 @@ const workData = [
         timeline: "Feb 2025 - Present",
         status: "in-progress",
         altText: "UNiFOODi Logo",
-        descriptionLine1: "I am currently developing a Flutter application with my team that uses HLS to stream content to the user.",
-        descriptionLine2: "The app integrates Google Gemini by processing live stream data and triggering notifications based on in-stream events.",
-        descriptionLine3: "We are actively debugging and meeting frequently to ensure that our application is ready and runs soothly for its soft launch, which is coming soon."
+        descriptionLine1: "Developing a Flutter application alongside my team to deliver HLS content streaming to users.",
+        descriptionLine2: "The application uses Google Gemini to analyze live stream data and send notifications when specific in-stream events occur.",
+        descriptionLine3: "Our team actively conducts debugging sessions while meeting frequently to prepare our application for its upcoming soft launch."
     },
     {
         logo: "vista-logo.jpg",
@@ -89,9 +89,9 @@ const workData = [
         timeline: "Jan 2025 - Present",
         status: "in-progress",
         altText: "Valley Institute for Sustainability, Technology, and Agriculture Logo",
-        descriptionLine1: "Led front-end development efforts focused on enhancing web performance, accessibility, and mobile usuability.",
-        descriptionLine2: "By modernizing VISTA and its affiliated sites, such as implementing adaptive design techniques, my efforts led to a 32% increase in mobile traffic and a 47% increase in session duration.",
-        descriptionLine3: "In addition, I developed reusable WordPress components with HTML, CSS, and JavaScript to ensure seamless integration and consistency across all sites."
+        descriptionLine1: "Leading front-end development efforts, improving website performance, accessibility, and mobile usability, which altogether increased session durations by 47%.",
+        descriptionLine2: "Redesigning VISTA and its affiliated sites, such as by implementing adaptive design techniques, resulted in a 32% increase in mobile traffic.",
+        descriptionLine3: "Used HTML, CSS, and JavaScript in WordPress to create reusable elements that provide smooth integration between all sites."
 
     },
     {
@@ -101,8 +101,8 @@ const workData = [
         timeline: "Mar 2024 - Aug 2024",
         status: "completed",
         altText: "Bay Valley Tech Logo",
-        descriptionLine1: "Automated API testing by developing a tool in Python that ensured consistent request performance, effectively reducing my team's time spent testing by 40%.",
-        descriptionLine2: "Throughout the development process, I collaborated closely with my team, using GitHub to communicate changes regularly, create and review pull requests, and maintain clean version control practices to support smooth, stable deployments.",
+        descriptionLine1: "Built a Python tool that automated API testing, reducing my team's testing time by 40% and allowing us to meet deadlines better.",
+        descriptionLine2: "During development, I worked closely with my team through GitHub to share regular updates by creating and reviewing pull requests while maintaining version control practices that enabled smooth, stable deployments.",
         descriptionLine3: "Some projects I was involved in include developing an authenticator to manage and authenticate employees, built on React.js, Express.js, MongoDB, and Docker."
     }
 ];
