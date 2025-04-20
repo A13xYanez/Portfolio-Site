@@ -104,7 +104,6 @@ const Contact = () => {
                 </div>
                 <button>Send</button>
             </form>
-            <spline-viewer loading="eager" className="robot" url="https://prod.spline.design/jBicArVr3VozLTYt/scene.splinecode"></spline-viewer>
         </div>
     );
 };

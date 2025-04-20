@@ -239,28 +239,6 @@ form .form-invalid-with-content .form-inputs textarea ~ label {
 
 
 
-/* 3D Robot */
-.robot {
-    position: absolute;
-    width: 50%;
-    right: 0px;
-    bottom: -30%;
-    z-index: 1000;
-    pointer-events: none;
-    animation: slideUp 2s;
-}
-
-@keyframes slideUp {
-    from {
-        bottom: -100%;
-    }
-    to {
-        bottom: -30%;
-    }
-}
-
-
-
 /* Auroa Background */
 .auroa-background {
     width: 100%;

@@ -116,7 +116,7 @@ const projectData = [
         ]
     },
     {
-        title: "Materials Research Society",
+        title: "MRS @ UC Merced – Member Portal",
         img: "work-in-progress.png",
         skills: [
             "typescript-icon.svg",
