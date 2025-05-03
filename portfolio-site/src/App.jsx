@@ -8,6 +8,7 @@ import Landing from './components/landing/Landing';
 import Projects from './components/projects/Projects';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
+import Loader from './components/global/preloader/Loader';
 
 function App() {
   const location = useLocation();
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className='contain-app'>
       <div className="app-contents">
+        <Loader />
         <Nav page={location.pathname} />
         <Menu />
         <AnimatePresence mode='wait'>
