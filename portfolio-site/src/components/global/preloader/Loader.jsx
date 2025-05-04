@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimate } from 'framer-motion';
-import Image from '../images/Image';
+import four from './assets/4.png';
+import three from './assets/3.png';
+import two from './assets/2.png';
+import one from './assets/1.png';
 import './Loader.css';
 
 const Loader = () => {
@@ -24,7 +27,6 @@ const Loader = () => {
 
         await animate("#imageCollection", {
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            display: "flex"
         },
         {
             delay: 0.2,
@@ -109,31 +111,31 @@ const Loader = () => {
                         variants={move}
                         initial="hidden"
                         animate={["moveUp", "moveLeft"]}
-                        custom={[100, 0.2]}
+                        custom={[0, 0.2]}
                     >
                         Alex
                     </motion.h1>
                 </div>
                 <motion.div id='imageCollection' className="loader-image-container">
-                    <motion.img className="loader-image" src='logo.svg' alt="" 
+                    <motion.img className="loader-image" src={four} alt="" 
                         variants={imageChange}
                         initial="hidden"
                         animate="show"
                         custom={1.8}
                     />
-                    <motion.img className="loader-image" src='logo.svg' alt="" 
+                    <motion.img className="loader-image" src={three} alt="" 
                         variants={imageChange}
                         initial="hidden"
                         animate="show"
                         custom={2.2}
                     />
-                    <motion.img className="loader-image" src='logo.svg' alt="" 
+                    <motion.img className="loader-image" src={two} alt="" 
                         variants={imageChange}
                         initial="hidden"
                         animate="show"
                         custom={2.6}
                     />
-                    <motion.img className="loader-image" src='logo.svg' alt="" 
+                    <motion.img className="loader-image" src={one} alt="" 
                         transition={{delay: 3, duration: 0.6, ease: "easeInOut"}}
                     />
                 </motion.div>
@@ -142,7 +144,7 @@ const Loader = () => {
                         variants={move}
                         initial="hidden"
                         animate={["moveUp", "moveRight"]}
-                        custom={[-100, 0.3]}
+                        custom={[-0, 0.3]}
                     >
                         Yanez
                     </motion.h1>
