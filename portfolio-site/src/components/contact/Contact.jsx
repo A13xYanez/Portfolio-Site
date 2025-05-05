@@ -32,7 +32,6 @@ const Contact = () => {
         setFormValues({...formValues, [name]: value});
     }
 
-    // Form Submition
     const handleSubmit = (e) => {
         e.preventDefault()
         const errors = formValidation(formValues);
@@ -54,11 +53,10 @@ const Contact = () => {
     let max = 30;
     let random = 0;
     const lines = [];
-
     for (let i = 0; i < 150; i++) {
         random = Math.floor(Math.random() * (max - min + 1)) + min;
         lines.push(
-            <li style={{ "--i": random  }}></li>
+            <li style={{ "--i": random  }} key={i}></li>
         )
     };
     

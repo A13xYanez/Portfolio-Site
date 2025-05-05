@@ -1,14 +1,32 @@
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import transition from '../global/transitions/Transition';
-const Spline = React.lazy(() => import('@splinetool/react-spline'));
 import './Landing.css';
 
 const Landing = () => {
-    const [ready, setReady] = useState(false);
-
+    const ring = useRef(null);
     useEffect(() => {
-        const timer = setTimeout(() => setReady(true), 1000); 
-        return () => clearTimeout(timer);
+        const ringTarget = ring.current;
+        ringTarget.style.setProperty("--rotateX", `0deg`);
+        ringTarget.style.setProperty("--rotateY", `0deg`);
+        const maxRotation = 45;
+
+        document.addEventListener("mousemove", (e) => {
+            rotateElement(e, ringTarget);
+        });
+
+        function rotateElement(event, element) {
+            const x = event.clientX;
+            const y = event.clientY;
+
+            const middleX = window.innerWidth / 2;
+            const middleY = window.innerHeight / 2;
+
+            const offsetX = ((x - middleX) / middleX) * maxRotation;
+            const offsetY = ((y - middleY) / middleY) * maxRotation;
+
+            element.style.setProperty("--rotateX", `${-1 * offsetY}deg`);
+            element.style.setProperty("--rotateY", `${offsetX}deg`);
+        };
     }, []);
 
     return (
@@ -18,15 +36,7 @@ const Landing = () => {
                 <h2>Full-Stack Developer</h2>
             </div>
             <div className="gradient" />
-            <Suspense>
-                {ready &&
-                    <Spline
-                        className='planet'
-                        scene="https://prod.spline.design/Zrxlwv5n5Gc0cpJy/scene.splinecode" 
-                    />
-                }
-            </Suspense>
-            <div className="block" />
+            <div className='landing-ring' ref={ring} />
         </main>
     );
 };

@@ -17,21 +17,10 @@
     left: 20px;
     align-items: start;
     font-size: clamp(9px, .5rem + .5vw, 12px);
-    animation: rolesSlideRight 2s;
 }
 
 .roles h2 {
     font-weight: 100;
-}
-
-.block {
-    width: 160px;
-    height: 40px;
-    position: absolute;
-    background-color: #161616;
-    bottom: 18px;
-    right: 0;
-    z-index: 9;
 }
 
 .gradient {
@@ -44,31 +33,63 @@
     transform: rotate(-15deg);
     border-radius: 50%;
     z-index: 0;
+    animation: fade-in 2s ease-in-out;
 }
 
-.planet {
-    animation: fade-in 1.5s ease-in;
+.landing-ring {
+    width: 45%;
+    aspect-ratio: 1 / 1;
+    border: 20px solid #4CB2AF;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0px 0px 20px 5px rgba(76, 178, 175, .5);
     position: absolute;
+    bottom: 50%;
+    transform-style: preserve-3d;
+    transform: translateY(50%) perspective(1000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+    animation: expandRing 2s;
+}
+
+.landing-ring::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    inset: -.5rem;
+    background: transparent;
+    transform: translateZ(-6px);
+    border: 20px solid var(--white);
+    filter: blur(5px);
+}
+
+.landing-ring::before {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    inset: .4rem;
+    background: transparent;
+    transform: translateZ(-10px);
+    z-index: 1;
+    border: 10px solid #4CB2AF;
 }
 
 
 
 /* Landing Animations */
+@keyframes expandRing {
+    from {
+        transform: translateY(-100%) perspective(1000px) rotateY(var(--rotateY)) rotateX(var(--rotateX)) scale(0);
+    }
+    to {
+        transform: translateY(50%) perspective(1000px) rotateY(var(--rotateY)) rotateX(var(--rotateX)) scale(1);
+    }
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
-    }
-}
-
-@keyframes rolesSlideRight {
-    from {
-        left: -500px;
-    }
-    to {
-        left: 20px;
     }
 }
 
@@ -91,5 +112,11 @@
 
     .menu-controls {
         width: 65px;
+    }
+}
+
+@media (max-width: 530px) {
+    .landing-ring {
+        min-width: 80%;
     }
 }

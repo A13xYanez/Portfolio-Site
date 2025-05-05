@@ -25,6 +25,7 @@ const BioSection = () => {
                     <div className="about-window-content">
                         <p>
                             Hey There, I'm Alex...
+                        </p>
                         <p>
                             Full-Stack Developer & Software Engineer.
                         </p>
@@ -32,7 +33,6 @@ const BioSection = () => {
                         <p>
                             I create beautiful web and mobile apps with a lot of attention to detail.
                             From making my first program on Code.org when I was 11 years old to building full-stack projects, I have come a long way and can't wait for what the future holds for me.
-                        </p>
                         </p>
                     </div>
                 </div>
