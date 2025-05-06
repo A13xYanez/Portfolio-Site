@@ -15,8 +15,11 @@ const Landing = () => {
         document.addEventListener("mousemove", (e) => {
             rotateElement(e, ringTarget);
         });
+        document.addEventListener("touchmove", (e) => {
+            mobileRotateElement(e, ringTarget);
+        });
 
-        function rotateElement(event, element) {
+        const rotateElement = (event, element) => {
             const x = event.clientX;
             const y = event.clientY;
 
@@ -28,6 +31,20 @@ const Landing = () => {
 
             element.style.setProperty("--rotateX", `${-1 * offsetY}deg`);
             element.style.setProperty("--rotateY", `${offsetX}deg`);
+        };
+        const mobileRotateElement = (event, element) => {
+            if (event.touches.length > 0) {
+                const touch = event.touches[0];
+
+                const middleX = window.innerWidth / 2;
+                const middleY = window.innerHeight / 2;
+
+                const offsetX = ((touch.clientX - middleX) / middleX) * maxRotation;
+                const offsetY = ((touch.clientY - middleY) / middleY) * maxRotation;
+
+                 element.style.setProperty("--rotateX", `${-1 * offsetY}deg`);
+                element.style.setProperty("--rotateY", `${offsetX}deg`);
+            }
         };
     }, []);
 
