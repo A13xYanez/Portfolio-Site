@@ -40,7 +40,6 @@
     top: 20px;
     right: 20px;
     font-size: clamp(9px, .75rem + .5vw, 12px);
-    animation: nameSlideLeft 2s;
 }
 
 .name h2 {
@@ -107,15 +106,6 @@
     100% {
         opacity: 1;
         padding: 0;
-    }
-}
-
-@keyframes nameSlideLeft {
-    from {
-        right: -500px;
-    }
-    to {
-        right: 20px;
     }
 }
 

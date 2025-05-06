@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from '../images/Image';
+import { useShuffle } from '../../../hooks/useShuffle';
 import { Link } from 'react-router-dom';
 import { easeInOut, motion } from 'framer-motion';
 import { FaGithub } from "react-icons/fa";
@@ -16,6 +17,11 @@ const Nav = ({ page }) => {
             setOpenNav(false);
         }
     }, [page]);
+
+    const projectHelpText = useRef();
+    useShuffle(projectHelpText);
+    const firstLastNameText = useRef();
+    useShuffle(firstLastNameText);
     
     return (
         <nav>
@@ -34,15 +40,17 @@ const Nav = ({ page }) => {
                 </div>
             </motion.div>
             <div className="name">
-                <h2>Alex Yanez</h2>
+                <Link to='/about'><h2 ref={firstLastNameText}>Alex Yanez</h2></Link>
             </div>
             <div className="open-to-projects-wrapper">
-                <div className="open-to-projects-content">
-                    <p>Providing project support</p>
-                    <div className="led-bulb-active">
-                        <div />
+                <Link to='/contact'>
+                    <div className="open-to-projects-content">
+                        <p ref={projectHelpText}>Providing project support</p>
+                        <div className="led-bulb-active">
+                            <div />
+                        </div>
                     </div>
-                </div>
+                </Link>
             </div>
         </nav>
     );

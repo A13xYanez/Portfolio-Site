@@ -137,7 +137,7 @@ const Loader = () => {
                 </div>
 
                 <motion.div id='imageCollection' className="loader-image-container">
-                    <motion.img className="loader-image" src="logo.svg" alt="Website Logo" 
+                    <motion.img drag="false" className="loader-image" src="logo.svg" alt="Website Logo" 
                         transition={{delay: 3, duration: 0.6, ease: "easeInOut"}}
                     />
                 </motion.div>
