@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import transition from '../global/transitions/Transition';
 import { usePreloader } from '../global/preloader/LoaderContext';
+import { useShuffle } from '../../hooks/useShuffle';
 import './Landing.css';
 
 const Landing = () => {
@@ -48,11 +49,16 @@ const Landing = () => {
         };
     }, []);
 
+    const roleTop = useRef();
+    const roleBottom = useRef();
+    useShuffle(roleTop);
+    useShuffle(roleBottom);
+    
     return (
         <main className='landing-container'>
             <div className="roles">
-                <h2>Software Engineer</h2>
-                <h2>Full-Stack Developer</h2>
+                <h2 ref={roleTop}>Software Engineer</h2>
+                <h2 ref={roleBottom}>Full-Stack Developer</h2>
             </div>
             <div className="gradient"
                 style={{animation: `fadeIn 2.5s ease ${isPreloading ? '4.5s' : '0s'} forwards`}}
