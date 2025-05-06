@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { PreloaderProvider } from './components/global/preloader/LoaderContext.jsx';
 import './App.css';
 
 import Nav from './components/global/nav/Nav';
@@ -16,17 +17,19 @@ function App() {
   return (
     <div className='contain-app'>
       <div className="app-contents">
-        <Loader />
-        <Nav page={location.pathname} />
-        <Menu />
-        <AnimatePresence mode='wait'>
-          <Routes location={location} key={location.pathname}>
-            <Route path='/' element={<Landing />} exact />
-            <Route path='/projects' element={<Projects />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<Contact />} />
-          </Routes>
-        </AnimatePresence>
+        <PreloaderProvider>
+          <Loader />
+          <Nav page={location.pathname} />
+          <Menu />
+          <AnimatePresence mode='wait'>
+            <Routes location={location} key={location.pathname}>
+              <Route path='/' element={<Landing />} exact />
+              <Route path='/projects' element={<Projects />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/contact' element={<Contact />} />
+            </Routes>
+          </AnimatePresence>
+        </PreloaderProvider>
       </div>
     </div>
   );

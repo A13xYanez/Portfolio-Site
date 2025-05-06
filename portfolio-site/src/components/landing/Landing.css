@@ -33,7 +33,6 @@
     transform: rotate(-15deg);
     border-radius: 50%;
     z-index: 0;
-    animation: fade-in 2s ease-in-out;
 }
 
 .landing-ring {
@@ -47,7 +46,6 @@
     bottom: 50%;
     transform-style: preserve-3d;
     transform: translateY(50%) perspective(1000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
-    animation: expandRing 2s;
 }
 
 .landing-ring::after {
@@ -84,7 +82,7 @@
     }
 }
 
-@keyframes fade-in {
+@keyframes fadeIn {
     0% {
         opacity: 0;
     }

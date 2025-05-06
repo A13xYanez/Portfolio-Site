@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimate } from 'framer-motion';
+import { usePreloader } from './LoaderContext';
 import './Loader.css';
 
 const Loader = () => {
+    const { setIsPreloading } = usePreloader();
     const [scope, animate] = useAnimate();
-
     async function loaderAnimation() {
         await animate("#imageCollection", {
             clipPath: "polygon(50% 40%, 50% 40%, 50% 60%, 50% 60%)",
@@ -32,7 +33,13 @@ const Loader = () => {
     };
 
     useEffect(() => {
-        loaderAnimation();
+        async function runAnimation() {
+            await loaderAnimation();
+            setTimeout(() => {
+                setIsPreloading(false);
+            }, 4500);
+        }
+        runAnimation();
     }, []);
 
     const move = {

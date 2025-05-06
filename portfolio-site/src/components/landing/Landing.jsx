@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import transition from '../global/transitions/Transition';
+import { usePreloader } from '../global/preloader/LoaderContext';
 import './Landing.css';
 
 const Landing = () => {
+    const { isPreloading } = usePreloader();
     const ring = useRef(null);
     useEffect(() => {
         const ringTarget = ring.current;
@@ -35,8 +37,12 @@ const Landing = () => {
                 <h2>Software Engineer</h2>
                 <h2>Full-Stack Developer</h2>
             </div>
-            <div className="gradient" />
-            <div className='landing-ring' ref={ring} />
+            <div className="gradient"
+                style={{animation: `fadeIn 2.5s ease ${isPreloading ? '4.5s' : '0s'} forwards`}}
+            />
+            <div className='landing-ring' ref={ring} 
+                style={{animation: `expandRing 2s ease ${isPreloading ? '4.5s' : '0s'} forwards`}}
+            />
         </main>
     );
 };
