@@ -60,11 +60,11 @@ const Landing = () => {
                 <h2 ref={roleTop}>Software Engineer</h2>
                 <h2 ref={roleBottom}>Full-Stack Developer</h2>
             </div>
-            <div className="gradient"
-                style={{animation: `fadeIn 2.5s ease ${isPreloading ? '4.5s' : '0s'} forwards`}}
+            <div className="gradient" 
+                style={{animation: `fadeIn 1s ease-out ${isPreloading ? '4.5s' : '0s'}`}}
             />
             <div className='landing-ring' ref={ring} 
-                style={{animation: `expandRing 2s ease ${isPreloading ? '4.5s' : '0s'} forwards`}}
+                style={{animation: `expandRing 2s cubic-bezier(0.68, -0.6, 0.32, 1.6) ${isPreloading ? '4.5s' : '0s'} forwards`}}
             />
         </main>
     );
