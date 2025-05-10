@@ -8,8 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 import './Nav.css';
 
 const Nav = ({ page }) => {
-    const [openNav, setOpenNav] = useState(true);
-
+    const [openNav, setOpenNav] = useState(false);
     useEffect(() => {
         if (page == '/') {
             setOpenNav(true);
@@ -22,6 +21,10 @@ const Nav = ({ page }) => {
     useShuffle(projectHelpText);
     const firstLastNameText = useRef();
     useShuffle(firstLastNameText);
+    const jobRoleTopText = useRef();
+    useShuffle(jobRoleTopText);
+    const jobRoleBottomText = useRef();
+    useShuffle(jobRoleBottomText);
     
     return (
         <nav>
@@ -40,7 +43,14 @@ const Nav = ({ page }) => {
                 </div>
             </motion.div>
             <div className="name">
-                <Link to='/about'><h2 ref={firstLastNameText}>Alex Yanez</h2></Link>
+                <Link to='/about'><p ref={firstLastNameText}>Alex Yanez [AY]</p></Link>
+            </div>
+            <div className="job-roles">
+                <div className="job-role-top">
+                    <p ref={jobRoleTopText}>Software Engineer</p>
+                    <p>/</p>
+                </div>
+                <p ref={jobRoleBottomText}>Full-Stack Developer</p>
             </div>
             <div className="open-to-projects-wrapper">
                 <Link to='/contact'>
