@@ -10,6 +10,7 @@ import Projects from './components/projects/Projects';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
 import Loader from './components/global/preloader/Loader';
+import Cursor from './components/global/cursor/Cursor.jsx';
 
 function App() {
   const location = useLocation();
@@ -19,6 +20,7 @@ function App() {
       <div className="app-contents">
         <PreloaderProvider>
           <Loader />
+          <Cursor />
           <Nav page={location.pathname} />
           <Menu />
           <AnimatePresence mode='wait'>
