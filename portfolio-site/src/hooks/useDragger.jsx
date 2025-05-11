@@ -81,6 +81,7 @@ const useDragger = (
     coords.current.lastX = left;
     coords.current.lastY = top;
 
+    // Functions for when the element is pressed
     const onMouseDown = (e) => {
       isClicked.current = true;
       target.style.cursor = "grab";
@@ -91,6 +92,17 @@ const useDragger = (
       coords.current.lastY = target.offsetTop;
     };
 
+    const onTouchStart = (e) => {
+      isClicked.current = true;
+      const touch = e.touches[0];
+      coords.current.startX = touch.clientX;
+      coords.current.startY = touch.clientY;
+
+      coords.current.lastX = target.offsetLeft;
+      coords.current.lastY = target.offsetTop;
+    };
+
+    // Functions for when element is dragged
     const onMouseMove = (e) => {
       if (!isClicked.current) return;
 
@@ -108,6 +120,24 @@ const useDragger = (
       target.style.cursor = "grabbing";
     };
 
+    const onTouchMove = (e) => {
+      if (!isClicked.current) return;
+
+      const touch = e.touches[0];
+      const nextX = touch.clientX - coords.current.startX + coords.current.lastX;
+      const nextY = touch.clientY - coords.current.startY + coords.current.lastY;
+
+      const maxX = container.clientWidth - target.offsetWidth;
+      const maxY = container.clientHeight - target.offsetHeight;
+
+      const clampedX = Math.max(0, Math.min(nextX, maxX));
+      const clampedY = Math.max(0, Math.min(nextY, maxY));
+
+      target.style.left = `${clampedX}px`;
+      target.style.top = `${clampedY}px`;
+    };
+
+    // Functions for when element is released
     const onMouseUp = () => {
       isClicked.current = false;
       target.style.cursor = "pointer";
@@ -115,6 +145,13 @@ const useDragger = (
       coords.current.lastY = target.offsetTop;
     };
 
+    const onTouchEnd = () => {
+      isClicked.current = false;
+      coords.current.lastX = target.offsetLeft;
+      coords.current.lastY = target.offsetTop;
+    };
+
+    // Other functions
     const onDoubleClick = () => {
       if (!targetToggles) return;
 
@@ -157,22 +194,38 @@ const useDragger = (
       coords.current.lastY = top;
     };
 
+    // Event listeners for desktop
     target.addEventListener("mousedown", onMouseDown);
     target.addEventListener("mouseup", onMouseUp);
     container.addEventListener("mousemove", onMouseMove);
     container.addEventListener("mouseleave", onMouseUp);
-    window.addEventListener("resize", onResize);
 
+    // Event listeners for mobile
+    target.addEventListener("touchstart", onTouchStart);
+    container.addEventListener("touchmove", onTouchMove);
+    container.addEventListener("touchend", onTouchEnd);
+    container.addEventListener("touchcancel", onTouchEnd);
+
+    // Other event listeners
+    window.addEventListener("resize", onResize);
     if (toggleEvent === "open-window") target.addEventListener("dblclick", onDoubleClick);
     if (toggleEvent === "close-window" && targetToggles) targetToggles.addEventListener("click", onClick);
 
     return () => {
+      // Event listeners for desktop
       target.removeEventListener("mousedown", onMouseDown);
       target.removeEventListener("mouseup", onMouseUp);
       container.removeEventListener("mousemove", onMouseMove);
       container.removeEventListener("mouseleave", onMouseUp);
-      window.removeEventListener("resize", onResize);
 
+      // Event listeners for mobile
+      target.removeEventListener("touchstart", onTouchStart);
+      container.removeEventListener("touchmove", onTouchMove);
+      container.removeEventListener("touchend", onTouchEnd);
+      container.removeEventListener("touchcancel", onTouchEnd);
+
+      // Other event listeners
+      window.removeEventListener("resize", onResize);
       if (toggleEvent === "open-window") target.removeEventListener("dblclick", onDoubleClick);
       if (toggleEvent === "close-window" && targetToggles) targetToggles.removeEventListener("click", onClick);
     };

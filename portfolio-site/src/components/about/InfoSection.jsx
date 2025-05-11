@@ -24,8 +24,7 @@ const InfoSection = () => {
                         </div>
                         <p>To access the information about me, <strong>double click</strong> on the folders.</p>
                         <br/>
-                        <p>Please note, you can move all the items on this page by dragging them with your mouse.</p>
-                        <p>This feature is disabled on mobile devices for a better user experience.</p>
+                        <p>Please note, you can move all the items on this page by dragging them with your mouse or finger if on a touch screen device.</p>
                     </div>
                 </div>
             </div>
