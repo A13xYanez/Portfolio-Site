@@ -1,3 +1,4 @@
+/* Custom Cursor CSS */
 .circleCursor {
     height: 24px;
     width: 24px;
@@ -10,4 +11,33 @@
     user-select: none;
     z-index: 99999999;
     opacity: 0;
+    box-shadow: 0 0 6px rgba(128, 0, 128, 0.6);
+}
+
+.cursor-label {
+    position: fixed;
+    background: #333;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 99999999;
+    transform: translate(-50%, -50%);
+}
+
+/* Hide Default Cursor */
+* {
+    cursor: none !important;
+}
+
+/* Hide Custom Cursor in touch screen devices */
+@media (pointer: coarse) {
+    .circleCursor {
+        display: none !important;
+    }
+    
+    * {
+        cursor: default !important;
+    }
 }

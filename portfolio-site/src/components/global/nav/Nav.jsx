@@ -43,7 +43,7 @@ const Nav = ({ page }) => {
                 </div>
             </motion.div>
             <div className="name">
-                <Link to='/about'><p ref={firstLastNameText}>Alex Yanez [AY]</p></Link>
+                <Link to='/about'><p data-cursor-label="About Me" ref={firstLastNameText}>Alex Yanez [AY]</p></Link>
             </div>
             <div className="job-roles">
                 <div className="job-role-top">

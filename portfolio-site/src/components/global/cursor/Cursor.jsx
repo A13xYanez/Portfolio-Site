@@ -1,19 +1,21 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Cursor.css';
 
-document.body.style.cursor = 'none';
 const NUM_CIRCLES = 20;
 const colors = [
-    "#1e1e1e", "#2b2b2b", "#3a3a3a", "#484848", "#575757",
-    "#666666", "#757575", "#848484", "#949494", "#a3a3a3",
-    "#b2b2b2", "#c1c1c1", "#d0d0d0", "#dddddd", "#e8e8e8",
-    "#f0f0f0", "#f5f5f5", "#fafafa", "#fefefe", "#ffffff"
+    "#1a001f", "#260033", "#33004d", "#400066", "#4d0080",
+    "#5c1a91", "#6a33a3", "#7a4db3", "#8a66c2", "#9b80d1",
+    "#ac99e0", "#bca3e6", "#cdb3ec", "#ddc3f2", "#eddbf8",
+    "#f4e6fb", "#f9effd", "#fcf7fe", "#fefbff", "#ffffff"
 ];
 
 const Cursor = () => {
     const circlesTarget = useRef([]);
     const coords = useRef({ x: 0, y: 0 });
     const hasMoved = useRef(false);
+
+    const [label, setLabel] = useState('');
+    const [labelPos, setLabelPos] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
         const circles = circlesTarget.current;
@@ -27,6 +29,11 @@ const Cursor = () => {
         const handleMouseMove = (e) => {
             coords.current.x = e.clientX;
             coords.current.y = e.clientY;
+            setLabelPos({ x: e.clientX + 12, y: e.clientY + 12 });
+
+            const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
+            const labelText = hoveredElement?.getAttribute('data-cursor-label') || '';
+            setLabel(labelText);
 
             if (!hasMoved.current) {
                 hasMoved.current = true;
@@ -78,6 +85,18 @@ const Cursor = () => {
                     className="circleCursor"
                 />
             ))}
+
+            {label && (
+                <div
+                    className="cursor-label"
+                    style={{
+                        left: `${labelPos.x}px`,
+                        top: `${labelPos.y + 15}px`
+                    }}
+                >
+                    {label}
+                </div>
+            )}
         </>
     );
 };
