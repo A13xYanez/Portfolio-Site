@@ -29,21 +29,22 @@ const Nav = ({ page }) => {
     return (
         <nav>
             <motion.div 
-            initial={false}
-            animate={{top: openNav ? 0 : -90, transition: {ease: easeInOut}}}
-            className="contain-nav-controlls">
+                initial={false}
+                animate={{top: openNav ? 0 : -90, transition: {ease: easeInOut}}}
+                className="contain-nav-controlls"
+            >
                 <Image path='website-logo.svg' className='nav-logo' onClick={() => setOpenNav(!openNav)} />
                 <div>
                     <div>
-                        <Link to='https://www.linkedin.com/in/a13x-yanez/'><FaLinkedin className='nav-link-icon' /></Link>
+                        <Link to='https://www.linkedin.com/in/a13x-yanez/'><FaLinkedin className='nav-link-icon'  data-cursor-label="Linkedin" /></Link>
                     </div>
                     <div>
-                        <Link to='https://github.com/A13xYanez'><FaGithub className='nav-link-icon'  /></Link>
+                        <Link to='https://github.com/A13xYanez'><FaGithub className='nav-link-icon' data-cursor-label="Github" /></Link>
                     </div>
                 </div>
             </motion.div>
             <div className="name">
-                <Link to='/about'><p data-cursor-label="About Me" ref={firstLastNameText}>Alex Yanez [AY]</p></Link>
+                <Link to='/about'><p ref={firstLastNameText} data-cursor-label="About Me">Alex Yanez [AY]</p></Link>
             </div>
             <div className="job-roles">
                 <div className="job-role-top">
@@ -55,7 +56,7 @@ const Nav = ({ page }) => {
             <div className="open-to-projects-wrapper">
                 <Link to='/contact'>
                     <div className="open-to-projects-content">
-                        <p ref={projectHelpText}>Providing project support</p>
+                        <p ref={projectHelpText} data-cursor-label="Get In Touch">Providing project support</p>
                         <div className="led-bulb-active">
                             <div />
                         </div>

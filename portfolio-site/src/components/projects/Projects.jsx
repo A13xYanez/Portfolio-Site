@@ -106,7 +106,7 @@ const projectData = [
     },
     {
         title: "Portfolio",
-        img: "portfolio-project.png",
+        img: "portfolio-project.png?updatedAt=1746991595588",
         websiteLink: "https://alex-yanez.me",
         sourceCodeLink: "https://github.com/A13xYanez/Portfolio-Site",
         skills: [
