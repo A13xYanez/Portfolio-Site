@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { PreloaderProvider } from './components/global/preloader/LoaderContext.jsx';
+import { useCursor } from './components/global/cursor/CursorContext.jsx';
 import './App.css';
 
 import Nav from './components/global/nav/Nav';
@@ -14,13 +15,14 @@ import Cursor from './components/global/cursor/Cursor.jsx';
 
 function App() {
   const location = useLocation();
+  const { useCustomCursor } = useCursor();
 
   return (
-    <div className='contain-app'>
+    <div className={useCustomCursor ? 'contain-app custom-cursor-enabled' : 'contain-app'}>
       <div className="app-contents">
         <PreloaderProvider>
           <Loader />
-          <Cursor />
+          {useCustomCursor && <Cursor />}
           <Nav page={location.pathname} />
           <Menu />
           <AnimatePresence mode='wait'>

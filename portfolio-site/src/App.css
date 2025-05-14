@@ -25,6 +25,17 @@
 
 
 
+/* Hide Default Cursor When Custom Cursor Selected */
+.custom-cursor-enabled {
+    cursor: none !important;
+}
+
+.custom-cursor-enabled * {
+    cursor: none !important;
+}
+
+
+
 /* App Responsive Breakpoints */
 @media screen and (min-width: 900px) {
     .contain-app {

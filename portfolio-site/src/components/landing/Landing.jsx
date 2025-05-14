@@ -35,23 +35,6 @@ const Landing = () => {
                     </div>
                 </Link>
             </div>
-            <motion.div className="cursor-options"
-                initial={{ bottom: -28 }}
-                whileHover={{ bottom: 0 }}
-            >
-                <div className="select-cursor">
-                    <div className="led-bulb-selected">
-                        <div />
-                    </div>
-                    <p>Default Cursor</p>
-                </div>
-                <div className="select-cursor">
-                    <div className="led-bulb-inactive">
-                        <div />
-                    </div>
-                    <p>Custom Cursor</p>
-                </div>
-            </motion.div>
         </main>
     );
 };

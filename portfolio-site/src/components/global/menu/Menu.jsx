@@ -1,14 +1,16 @@
 import React, { useState, useRef } from 'react';
 import { easeInOut, motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
-import './Menu.css';
 import { useShuffle } from '../../../hooks/useShuffle';
+import { useCursor } from '../cursor/CursorContext';
+import './Menu.css';
 
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 
 const Menu = () => {
     const [openMenu, setOpenMenu] = useState(true);
+    const { useCustomCursor, setUseCustomCursor } = useCursor();
     const homeLinkText = useRef();
     const aboutLinkText = useRef();
     const projectsLinkText = useRef();
@@ -45,6 +47,23 @@ const Menu = () => {
                     <div>
                         <NavLink to='/contact' onClick={() => setOpenMenu(!openMenu)}><p ref={contactLinkText}>Email</p></NavLink>
                     </div>
+                </div>
+            </motion.div>
+            <motion.div className="cursor-options"
+                initial={{ bottom: -28 }}
+                whileHover={{ bottom: 0 }}
+            >
+                <div className="select-cursor" onClick={() => setUseCustomCursor(false)}>
+                    <div className={useCustomCursor ? "led-bulb-inactive" : "led-bulb-selected"}>
+                        <div />
+                    </div>
+                    <p className='default-cursor-option'>Default Cursor</p>
+                </div>
+                <div className="select-cursor" onClick={() => setUseCustomCursor(true)}>
+                    <div className={useCustomCursor ? "led-bulb-selected" : "led-bulb-inactive"}>
+                        <div />
+                    </div>
+                    <p className='custom-cursor-option'>Custom Cursor</p>
                 </div>
             </motion.div>
         </div>

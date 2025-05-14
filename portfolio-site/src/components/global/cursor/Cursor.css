@@ -26,13 +26,20 @@
     transform: translate(-50%, -50%);
 }
 
-/* Hide Default Cursor */
-* {
-    cursor: none !important;
-}
+
 
 /* Hide Custom Cursor in touch screen devices */
 @media (pointer: coarse) {
+    .circleCursor {
+        display: none !important;
+    }
+    
+    * {
+        cursor: default !important;
+    }
+}
+
+@media (hover: none) {
     .circleCursor {
         display: none !important;
     }
