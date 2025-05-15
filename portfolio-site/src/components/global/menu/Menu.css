@@ -38,12 +38,13 @@
 
 .cursor-options {
     position: absolute;
-    bottom: 0px;
-    right: 200px;
+    height: fit-content;
+    top: 100px;
+    right: 0px;
     white-space: nowrap;
     background: #282828;
-    padding: 5px 15px 0 15px;
-    border-top-right-radius: 0.5rem;
+    padding: 5px 0px 5px 10px;
+    border-bottom-left-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
     z-index: 2;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .25);
@@ -59,11 +60,13 @@
 .default-cursor-option {
     font-weight: 400;
     margin: 5px 0 5px 10px;
+    font-size: 0.75rem;
 }
 
 .custom-cursor-option {
     font-weight: 400;
     margin: 5px 0 5px auto;
+    font-size: 0.75rem;
 }
 
 .led-bulb-selected {

@@ -50,8 +50,8 @@ const Menu = () => {
                 </div>
             </motion.div>
             <motion.div className="cursor-options"
-                initial={{ bottom: -28 }}
-                whileHover={{ bottom: 0 }}
+                initial={{ right: -105 }}
+                whileHover={{ right: 0 }}
             >
                 <div className="select-cursor" onClick={() => setUseCustomCursor(false)}>
                     <div className={useCustomCursor ? "led-bulb-inactive" : "led-bulb-selected"}>

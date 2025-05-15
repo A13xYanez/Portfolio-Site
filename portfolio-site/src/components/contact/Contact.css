@@ -108,6 +108,7 @@ form button {
     cursor: pointer;
     transition: 0.3s ease;
     font-weight: var(--bold);
+    text-transform: uppercase;
 }
 
 form button:hover {
@@ -194,6 +195,10 @@ form .form-invalid, .form-invalid-with-content small {
     color: var(--red);
 }
 
+form .form-invalid .form-inputs {
+    margin-bottom: 5px;
+}
+
 form .form-invalid .form-inputs, .form-invalid-with-content .form-inputs {
     position: relative;
     width: 100%;
@@ -235,6 +240,21 @@ form .form-invalid-with-content .form-inputs textarea ~ label {
     color: var(--white);
     transform: unset;
     border-radius: 2px;
+}
+
+.form-loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #555;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.loading-button {
+    background: #147df5;
 }
 
 
@@ -280,6 +300,9 @@ form .form-invalid-with-content .form-inputs textarea ~ label {
     left: 0;
 }
 
+
+
+/* Contact Animations */
 @keyframes auroa {
     0% {
         transform: translateY(100vh);
@@ -288,4 +311,9 @@ form .form-invalid-with-content .form-inputs textarea ~ label {
     100% {
         transform: translateY(-10vh);
     }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

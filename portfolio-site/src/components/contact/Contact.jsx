@@ -5,6 +5,7 @@ import './Contact.css';
 const Contact = () => {
     const [formValues, setFormValues] = useState({ name: '', email: '', message: ''});
     const [formErrors, setFormError] = useState({});
+    const [sending, setSending] = useState(false);
 
     const formValidation = (value) => {
         const errors = {};
@@ -38,6 +39,7 @@ const Contact = () => {
         setFormError(errors);
 
         if (Object.keys(errors).length === 0) {
+            setSending(true);
             const scriptURL = import.meta.env.VITE_DATABASE_URL;
             const form = document.querySelector('form');
             const formData = new FormData(form);
@@ -45,7 +47,9 @@ const Contact = () => {
             fetch(scriptURL, { method: 'POST', body: formData})
             .then(response => {
                 setFormValues({ name: '', email: '', message: ''});
-            }).catch(error => console.error('Error!', error.message))
+            })
+            .catch(error => console.error('Error!', error.message))
+            .finally(() => setSending(false));
         }
     };
 
@@ -75,7 +79,7 @@ const Contact = () => {
                                 : formValues.name ? "content-in-form" 
                                 : "form"}>
                     <div className={"form-inputs"}>
-                        <input type="text" id='name' name='name' onChange={handleValidation} value={formValues.name} />
+                        <input type="text" id='name' name='name' onChange={handleValidation} value={formValues.name} readOnly={sending} />
                         <label htmlFor="name">Name*</label>
                     </div>
                     <small>{formErrors.name}</small>
@@ -85,7 +89,7 @@ const Contact = () => {
                                 : formValues.email ? "content-in-form" 
                                 : "form"}>
                     <div className="form-inputs">
-                        <input type="text" id='email' name='email' onChange={handleValidation} value={formValues.email} />
+                        <input type="text" id='email' name='email' onChange={handleValidation} value={formValues.email} readOnly={sending} />
                         <label htmlFor="email">Email*</label>
                     </div>
                     <small>{formErrors.email}</small>
@@ -95,12 +99,18 @@ const Contact = () => {
                                 : formValues.message ? "content-in-form" 
                                 : "form"}>
                     <div className="form-inputs">
-                        <textarea cols="30" rows="5" id="message" name='message' onChange={handleValidation} value={formValues.message}></textarea>
+                        <textarea cols="30" rows="5" id="message" name='message' onChange={handleValidation} value={formValues.message} readOnly={sending} />
                         <label htmlFor="message">Message*</label>
                     </div>
                     <small>{formErrors.message}</small>
                 </div>
-                <button>Send</button>
+                <button className={sending && "loading-button"} type='submit' disabled={sending}>
+                    {sending ? (
+                        <>
+                            <span className="form-loader" />
+                        </>
+                    ) : 'Send'}
+                </button>
             </form>
         </div>
     );
