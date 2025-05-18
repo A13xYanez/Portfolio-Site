@@ -4,7 +4,7 @@
     background: #282828;
     position: absolute;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
-    z-index: 2000;
+    z-index: 1000;
     height: fit-content;
     right: 0;
     border-top-left-radius: 30px;
@@ -46,7 +46,7 @@
     padding: 5px 0px 5px 10px;
     border-bottom-left-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
-    z-index: 2;
+    z-index: 1000;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .25);
 }
 

@@ -13,7 +13,6 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    animation: jumpIn 2s cubic-bezier(0.68, -0.6, 0.32, 1.6) 4.5s forwards;
 }
 
 .gradient {

@@ -28,53 +28,53 @@ const SkillsSection = () => {
                     <div className="skills-window-content">
                         <div className="skills-column">
                             <div>
-                                <Image path="javascript-icon.svg" />
+                                <Image path="javascript-icon.svg" draggable="false" />
                                 <p>JavaScript</p>
                             </div>
                             <div>
-                                <Image path="typescript-icon.svg" />
+                                <Image path="typescript-icon.svg" draggable="false" />
                                 <p>TypeScript</p>
                             </div>
                             <div>
-                                <Image path="react-icon.svg" />
+                                <Image path="react-icon.svg" draggable="false" />
                                 <p>React.js</p>
                             </div>
                             <div>
-                                <Image path="nextjs-icon.svg" />
+                                <Image path="nextjs-icon.svg" draggable="false" />
                                 <p>Next.js</p>
                             </div>
                             <div>
-                                <Image path="express-icon.svg" />
+                                <Image path="express-icon.svg" draggable="false" />
                                 <p>Express.js</p>
                             </div>
                             <div>
-                                <Image path="tailwindcss-icon.svg" />
+                                <Image path="tailwindcss-icon.svg" draggable="false" />
                                 <p>Tailwind</p>
                             </div>
                         </div>
                         <div className="skills-column">
                             <div>
-                                <Image path="cplusplus-icon.svg" />
+                                <Image path="cplusplus-icon.svg" draggable="false" />
                                 <p>C++</p>
                             </div>
                             <div>
-                                <Image path="java-icon.svg" />
+                                <Image path="java-icon.svg" draggable="false" />
                                 <p>Java</p>
                             </div>
                             <div>
-                                <Image path="spring-icon.svg" />
+                                <Image path="spring-icon.svg" draggable="false" />
                                 <p>Spring Boot</p>
                             </div>
                             <div>
-                                <Image path="amazonwebservices-icon.svg" />
+                                <Image path="amazonwebservices-icon.svg" draggable="false" />
                                 <p>AWS</p>
                             </div>
                             <div>
-                                <Image path="flutter-icon.svg" />
+                                <Image path="flutter-icon.svg" draggable="false" />
                                 <p>Flutter</p>
                             </div>
                             <div>
-                                <Image path="dart-icon.svg" />
+                                <Image path="dart-icon.svg" draggable="false" />
                                 <p>Dart</p>
                             </div>
                         </div>
