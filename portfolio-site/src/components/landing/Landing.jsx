@@ -10,6 +10,8 @@ import { usePreloader } from '../global/preloader/LoaderContext';
 import Image from '../global/images/Image';
 import './Landing.css';
 
+import Spline from '@splinetool/react-spline';
+
 const Landing = () => {
     const { isPreloading } = usePreloader();
     const recentWorkTitleText = useRef();
@@ -17,18 +19,7 @@ const Landing = () => {
     
     return (
         <main className='landing-container'>
-            <div className="gradient" />
-            <Canvas className='planet-canvas'
-                style={{animation: `jumpIn 2s cubic-bezier(0.68, -0.6, 0.32, 1.6) ${isPreloading ? '4.4s' : '0.05s'} forwards`}}
-            >
-                <OrbitControls enableZoom={false} enableRotate={false} autoRotate={true} />
-                <Suspense fallback={null}>
-                    <Model />
-                </Suspense>
-                <EffectComposer>
-                    <Bloom intensity={1.5} luminanceThreshold={0.2} luminanceSmoothing={0.9} />
-                </EffectComposer>
-            </Canvas>
+            <Spline className='circut' scene="https://prod.spline.design/5jfbMbZeWCk72OLT/scene.splinecode" />
             <div className="recent-project-wrap">
                 <h2 ref={recentWorkTitleText}>Recent Work</h2>
                 <Link to='/projects'>

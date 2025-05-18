@@ -18,19 +18,14 @@ form {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 6px;
-    max-width: 576px;
     width: 100%;
-    margin: 0 16px;
+    height: 100%;
     display: block;
     font-family: var(--font);
     color: var(--white);
     transition: 0.5s;
     z-index: 3;
-}
-
-form:hover {
-    background: rgba(22, 22, 22, .5);
-    transform: scale(1.03);
+    height: 430px;
 }
 
 form h2 {
@@ -195,7 +190,7 @@ form .form-invalid, .form-invalid-with-content small {
     color: var(--red);
 }
 
-form .form-invalid .form-inputs {
+form .form-invalid .form-inputs, form .form-invalid-with-content .form-inputs {
     margin-bottom: 5px;
 }
 
@@ -255,6 +250,96 @@ form .form-invalid-with-content .form-inputs textarea ~ label {
 
 .loading-button {
     background: #147df5;
+}
+
+.flip-card {
+    max-width: 576px;
+    width: 100%;
+    height: 375px;
+    margin: 0 16px;
+    transition: all 0.4s ease-in-out;
+}
+
+.flip-card:hover {
+    background: rgba(22, 22, 22, .5);
+    transform: scale(1.03);
+    height: 430px;
+}
+
+.flip-card-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    background-color: black;
+    z-index: 3;
+    background: rgba(22, 22, 22, 0.22);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(197, 197, 197, 0.22);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font);
+    color: var(--white);
+    transition: 0.5s;
+}
+
+.flip-card-back h2 {
+    text-align: center;
+    font-weight: var(--bold);
+    margin-bottom: 12px;
+}
+
+.message-confirmation-icon {
+    width: 100%;
+    font-size: 6rem;
+    margin-bottom: 26px;
+    color: lime;
+}
+
+.message-confirmation-divider {
+    width: 100%;
+    height: 2px;
+    background: rgba(197, 197, 197, 0.22);
+    margin: 26px 0;
+}
+
+.new-message-button {
+    padding: 10px 30px;
+    background: transparent;
+    color: #147df5;
+    border: 2px solid #147df5;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: var(--bold);
+    text-transform: uppercase;
+}
+
+.new-message-button:hover {
+    background-color: #147df5;
+    color: var(--white);
 }
 
 
