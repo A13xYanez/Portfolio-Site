@@ -7,10 +7,6 @@
     align-items: center;
 }
 
-.circut {
-    position: absolute;
-}
-
 .planet-canvas {
     height: 100% !important;
     width: 100% !important;
